@@ -1,0 +1,9 @@
+<span class="dropdown">REG
+	<div class="dropdown-content">
+		<p><b>Parameter Registers</b></p>
+		{% assign registers_to_show = site.data.registers | where: "show_in_index", true %}
+		{% for register in registers_to_show %}
+			<p><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/{{ register.id }}">{{ register.name }}</a></p>
+		{% endfor %}
+	</div>
+</span>

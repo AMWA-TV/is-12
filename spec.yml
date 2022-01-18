@@ -1,0 +1,10 @@
+amwa_id: IS-TEMPLATE
+url: https://specs.amwa.tv/is-template
+name: AMWA NMOS Template Specification
+status: Continuing
+repo_name: is-template
+alt_repo_name: nmos-template
+repo_url: https://github.com/AMWA-TV/is-template
+releases:
+default_branch: main
+show_in_index: false

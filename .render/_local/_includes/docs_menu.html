@@ -1,0 +1,9 @@
+<span class="dropdown">DOCS
+	<div class="dropdown-content">
+		<p><b>Docs for {{ site.default_tree | replace_first: "branches/", "branch " | replace_first: "releases/", "release " }}</b></p>
+		{% for doc in site.data.docs %}
+			<p><a href="{{ site.baseurl }}/{{ site.default_tree }}/docs/{{ doc.file }}">{{ doc.name }}</a></p>
+		{% endfor %}
+	</div>
+</span>
+ 
