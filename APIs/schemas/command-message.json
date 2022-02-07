@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Command protocol message structure",
+  "title": "Command protocol message",
+  "allOf": [
+    {
+      "$ref": "base-message.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "messages"
+      ],
+      "properties": {
+        "messages": {
+          "description": "Messages being transmited in this transaction",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "handle",
+              "oid",
+              "methodID",
+              "arguments"
+            ],
+            "properties": {
+              "handle": {
+                "type": "integer",
+                "description": "Message integer value used for pairing with the response",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "oid": {
+                "type": "integer",
+                "description": "Object id containing the method",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "methodID": {
+                "type": "object",
+                "description": "ID structure for the target method",
+                "required": [
+                  "level",
+                  "index"
+                ],
+                "properties": {
+                  "level": {
+                    "type": "integer",
+                    "description": "Level component of the method ID",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "index": {
+                    "type": "integer",
+                    "description": "Index component of the propmethoderty ID",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                }
+              },
+              "arguments": {
+                "type": "object",
+                "description": "Message arguments"
+              }
+            }
+          }
+        },
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "string",
+          "enum": [
+            "Command"
+          ]
+        }
+      }
+    }
+  ]
+}

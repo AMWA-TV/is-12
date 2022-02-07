@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Notification protocol message structure",
+  "title": "Notification protocol message",
+  "allOf": [
+    {
+      "$ref": "base-message.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "messages"
+      ],
+      "properties": {
+        "messages": {
+          "description": "Messages being transmited in this transaction",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "oid",
+              "eventID",
+              "eventData"
+            ],
+            "properties": {
+              "type": {
+                "description": "Message type",
+                "type": "string",
+                "enum": [
+                  "Event"
+                ]
+              },
+              "oid": {
+                "type": "integer",
+                "description": "Emitter object id",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "eventID": {
+                "type": "object",
+                "description": "Event ID structure",
+                "required": [
+                  "level",
+                  "index"
+                ],
+                "properties": {
+                  "level": {
+                    "type": "integer",
+                    "description": "Level component of the event ID",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "index": {
+                    "type": "integer",
+                    "description": "Index component of the event ID",
+                    "minimum": 1,
+                    "maximum": 65535
+                  }
+                }
+              },
+              "eventData": {
+                "type": "object",
+                "description": "Message result",
+                "required": [
+                  "propertyID",
+                  "changeType",
+                  "propertyValue"
+                ],
+                "properties": {
+                  "propertyID": {
+                    "type": "object",
+                    "description": "Property ID structure",
+                    "required": [
+                      "level",
+                      "index"
+                    ],
+                    "properties": {
+                      "level": {
+                        "type": "integer",
+                        "description": "Level component of the property ID",
+                        "minimum": 0,
+                        "maximum": 65535
+                      },
+                      "index": {
+                        "type": "integer",
+                        "description": "Index component of the property ID",
+                        "minimum": 1,
+                        "maximum": 65535
+                      }
+                    }
+                  },
+                  "changeType": {
+                    "type": "integer",
+                    "description": "Event change type numeric value. Must include the numeric values for ncaPropertyChangeType",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "propertyValue": {
+                    "type": ["string", "number", "object", "array", "boolean", "null" ],
+                    "description": "Property value as described in the NC-Framework Class definition or in a private Class definition"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "string",
+          "enum": [
+            "Notification"
+          ]
+        }
+      }
+    }
+  ]
+}

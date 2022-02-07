@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Command response protocol message structure",
+  "title": "Command response protocol message",
+  "allOf": [
+    {
+      "$ref": "base-message.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "messages"
+      ],
+      "properties": {
+        "messages": {
+          "description": "Messages being transmited in this transaction",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "handle",
+              "result"
+            ],
+            "properties": {
+              "handle": {
+                "type": "integer",
+                "description": "Message integer value used for pairing with the response",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "result": {
+                "type": "object",
+                "description": "Message result",
+                "required": [
+                  "status"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "description": "Status of the command. Must include the numeric values for ncaMethodStatus or other types which inherit from it. 0 must be returned if the commands was successful",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "value": {
+                    "type": ["string", "number", "object", "array", "boolean", "null" ],
+                    "description": "Method value as described in the NC-Framework Type definition or in a private Type definition"
+                  },
+                  "errorMessage": {
+                    "description": "Error message associated with the failure of the command (optional)",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "string",
+          "enum": [
+            "CommandResponse"
+          ]
+        }
+      }
+    }
+  ]
+}

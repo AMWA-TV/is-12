@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Base protocol message structure",
+  "title": "Base protocol message",
+  "required": [
+    "protocolVersion",
+    "messageType"
+  ],
+  "properties": {
+    "protocolVersion": {
+      "description": "Protocol version number",
+      "type": "string",
+      "pattern": "^(\\d+\\.)?(\\d+\\.)?(\\d+)$"
+    },
+    "messageType": {
+      "description": "Protocol message type",
+      "type": "string",
+      "enum": [
+        "CreateSession",
+        "CreateSessionResponse",
+        "Command",
+        "CommandResponse",
+        "Notification",
+        "Heartbeat",
+        "HeartbeatResponse"
+      ]
+    }
+  }
+}

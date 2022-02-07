@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Create session protocol message structure",
+  "title": "Create session protocol message",
+  "allOf": [
+    {
+      "$ref": "base-message.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "messages"
+      ],
+      "properties": {
+        "messages": {
+          "description": "Messages being transmited in this transaction",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "handle",
+              "arguments"
+            ],
+            "properties": {
+              "handle": {
+                "type": "integer",
+                "description": "Message integer value used for pairing with the response",
+                "minimum": 1,
+                "maximum": 65535
+              },
+              "arguments": {
+                "type": "object",
+                "description": "Message arguments",
+                "required": [
+                  "heartBeatTime"
+                ],
+                "properties": {
+                  "heartBeatTime": {
+                    "type": "integer",
+                    "description": "Heartbeat interval specified in milliseconds",
+                    "minimum": 1,
+                    "maximum": 2147483647
+                  }
+                }
+              }
+            }
+          }
+        },
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "string",
+          "enum": [
+            "CreateSession"
+          ]
+        }
+      }
+    }
+  ]
+}

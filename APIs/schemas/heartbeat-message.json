@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Heartbeat protocol message structure",
+  "title": "Heartbeat protocol message",
+  "allOf": [
+    {
+      "$ref": "base-message.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "sessionId"
+      ],
+      "properties": {
+        "sessionId": {
+          "type": "integer",
+          "description": "Session numeric value (available after sending the create session message)",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "string",
+          "enum": [
+            "Heartbeat"
+          ]
+        }
+      }
+    }
+  ]
+}
