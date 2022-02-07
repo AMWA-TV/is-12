@@ -9,15 +9,15 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-- tbc
+Describes the specification for the NMOS Device Control protocol.
 
 ### Why does it matter?
 
-- tbc
+Sets out the rules and requirements for implementing the NMOS Device Control protocol in devices and controllers.
 
 ### How does it work?
 
-- tbc
+Describes a standard way of exposing NMOS Control models which can be consumed and interacted with.
 
 <!-- INTRO-END -->
 
