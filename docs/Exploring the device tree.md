@@ -1,11 +1,11 @@
 # Exploring the device tree
 
-The `GetMemberDescriptors (2m9)` method from NC-Framework can be used to return the descriptions of all members (workers, blocks, agents, managers etc.) of a block.
+The `GetMemberDescriptors (2m1)` method from NC-Framework can be used to return the descriptions of all members (workers, blocks, agents, managers etc.) of a block.
 Requesting member descriptors for anything other than a block is not allowed and will return an error status code.
 
 The device `root block` MUST always have the static `oid` of `1`. No other object or member must use the `oid` of `1` besides the root block.
 
-Example for calling GetMemberDescriptors (2m9) on the root block
+Example for calling GetMemberDescriptors (2m1) on the root block
 
 ```json
 {
@@ -18,14 +18,14 @@ Example for calling GetMemberDescriptors (2m9) on the root block
       "oid": 1,
       "methodID": {
         "level": 2,
-        "index": 9
+        "index": 1
       }
     }
   ]
 }
 ```
 
-Example response from calling GetMemberDescriptors (2m9) on the root block
+Example response from calling GetMemberDescriptors (2m1) on the root block
 
 ```json
 {

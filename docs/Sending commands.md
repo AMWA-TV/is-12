@@ -1,6 +1,6 @@
 # Sending commands
 
-Example command for calling setUserLabel (1m10) on any ncaObject (requires arguments but does not return a value)
+Example for settings the user label (1p7) on any ncaObject using the generic set method (1m2) (requires arguments but does not return a value)
 
 ```json
 {
@@ -13,17 +13,21 @@ Example command for calling setUserLabel (1m10) on any ncaObject (requires argum
       "oid": 7777,
       "methodID": {
         "level": 1,
-        "index": 10
+        "index": 2
       },
       "arguments": {
-        "label": "My new label"
+        "id": {
+          "level": 1,
+          "index": 2
+        },
+        "value": "My new label"
       }
     }
   ]
 }
 ```
 
-Example response for calling setUserLabel (1m10) on any ncaObject.
+Example response for settings the user label (1p7) on any ncaObject using the generic set method (1m2).
 
 ```json
 {
@@ -41,7 +45,7 @@ Example response for calling setUserLabel (1m10) on any ncaObject.
 }
 ```
 
-Example command for calling getClassIdentity (1m1) on any ncaObject (has no arguments but has a return value of `ncaMethodResultClassIdentity` as specified in NC-Framework)
+Example command for retrieving the classId (1p1) on any ncaObject using the generic get method (1m1) (has no arguments but has a return value of `ncaMethodResultPropertyValue` as specified in NC-Framework)
 
 ```json
 {
@@ -52,16 +56,18 @@ Example command for calling getClassIdentity (1m1) on any ncaObject (has no argu
     {
       "handle": 2,
       "oid": 7777,
-      "methodID": {
-        "level": 1,
-        "index": 1
+      "arguments": {
+        "id": {
+          "level": 1,
+          "index": 1
+        }
       }
     }
   ]
 }
 ```
 
-Example response for calling getClassIdentity (1m1) on any ncaObject.
+Example response for retrieving the classId (1p1) on any ncaObject using the generic get method (1m1).
 
 ```json
 {
@@ -73,10 +79,7 @@ Example response for calling getClassIdentity (1m1) on any ncaObject.
       "handle": 2,
       "result": {
         "status": 0,
-        "identity": {
-          "id": [1, 7, 1],
-          "version": 1
-        }
+        "value": [1, 7, 1]
       }
     }
   ]

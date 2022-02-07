@@ -52,7 +52,7 @@ Notifications are clearly distinguished using the `Notification` messageType and
 Multiple messages MAY be sent in a `Notification`.
 Each message must have the following:
 
-* type - only value permitted currently is `Event`,
+* type - only value permitted currently is `Event`
 * oid - unique object id of the emitter
 * eventID - unique event ID specified as a level and index.
 * eventData - This must include the propertyID (`ncaPropertyID` in NC-Framework) of the property included in the event, the changeType (`ncaPropertyChangeType` in NC-Framework) and the return value.
