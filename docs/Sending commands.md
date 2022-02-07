@@ -56,6 +56,10 @@ Example command for retrieving the classId (1p1) on any ncaObject using the gene
     {
       "handle": 2,
       "oid": 7777,
+      "methodID": {
+        "level": 1,
+        "index": 1
+      },
       "arguments": {
         "id": {
           "level": 1,
