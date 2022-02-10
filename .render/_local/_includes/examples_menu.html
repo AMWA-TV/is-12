@@ -1,8 +1,0 @@
-<span class="dropdown">EXAMPLES
-	<div class="dropdown-content"> 
-		<p><b>JSON Examples for {{ site.default_tree | remove_first: "branches/"| remove_first: "releases/" }}</b></p>
-		{% for example in site.data.examples %}
-			<p><a href="{{ site.baseurl }}/{{ site.default_tree }}/examples/{{ example.file }}">{{ example.name }}</a></p>
-		{% endfor %}
-	</div>
-</span>
