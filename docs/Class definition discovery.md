@@ -2,7 +2,7 @@
 
 NC-Framework defines a class discovery mechanism which can be used for discovering details of class definitions. This is offered through a set of methods which exist in the `ncaClassManager`. The `ncaClassManager` can be discovered using the `GetMemberDescriptors` method shown in the earlier examples.
 
-`Note`: Definitions are not provided for the base class and only contain properties, methods and events defined in the actual class. The controller SHOULD inquire further if the base class is not known. The identity information will contain a class ID which always contains the chain of inheritance (e.g. "classID": [1,7,14] shows that this class inherits from the class with "classID": [1,7]).
+`Note`: Definitions are not provided for the base class and only contain properties, methods and events defined in the actual class. The controller SHOULD inquire further if the base class is not known. The identity information will contain a class ID which always contains the chain of inheritance (e.g. `"classID": [1,7,14]` shows that this class inherits from the class with `"classID": [1,7]`).
 
 The `GetControlClass (3m1)` returns the definition of a class and requires an identity argument which consists of:
 
