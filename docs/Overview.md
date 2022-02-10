@@ -7,4 +7,4 @@ This document relies on previous familiarity with the following existing documen
 * NC-Architecture (NMOS Control Architecture)
 * NC-Framework (NMOS Control Framework)
 
-A set of workflow examples are described in the `Example workflows` section.
+A set of workflow examples are described in the [Examples](Creating%20a%20session.md) section.
