@@ -1,5 +1,7 @@
 # Sending heartbeats
 
+Example heartbeat message
+
 ```json
 {
   "protocolVersion": "1.0",
