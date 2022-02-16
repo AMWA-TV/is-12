@@ -15,7 +15,7 @@ The protocol availability MUST be advertised through existing IS-04 practices in
     ],
     "controls": [
         {
-            "type": "urn:x-nmos:control:nca/v1.0",
+            "type": "urn:x-nmos:control:ncp/v1.0",
             "href": "ws://hostname/example"
         }
     ],
