@@ -93,7 +93,7 @@
                   },
                   "changeType": {
                     "type": "integer",
-                    "description": "Event change type numeric value. Must include the numeric values for ncaPropertyChangeType",
+                    "description": "Event change type numeric value. Must include the numeric values for ncPropertyChangeType",
                     "minimum": 0,
                     "maximum": 65535
                   },

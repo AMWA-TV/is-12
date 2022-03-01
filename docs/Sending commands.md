@@ -1,6 +1,6 @@
 # Sending commands
 
-Example for settings the user label (1p7) on any ncaObject using the generic set method (1m2) (requires arguments but does not return a value)
+Example for settings the user label (1p7) on any ncObject using the generic set method (1m2) (requires arguments but does not return a value)
 
 ```json
 {
@@ -27,7 +27,7 @@ Example for settings the user label (1p7) on any ncaObject using the generic set
 }
 ```
 
-Example response for settings the user label (1p7) on any ncaObject using the generic set method (1m2).
+Example response for settings the user label (1p7) on any ncObject using the generic set method (1m2).
 
 ```json
 {
@@ -45,7 +45,7 @@ Example response for settings the user label (1p7) on any ncaObject using the ge
 }
 ```
 
-Example command for retrieving the classId (1p1) on any ncaObject using the generic get method (1m1) (has no arguments but has a return value of `ncaMethodResultPropertyValue` as specified in NC-Framework)
+Example command for retrieving the classId (1p1) on any ncObject using the generic get method (1m1) (has no arguments but has a return value of `ncMethodResultPropertyValue` as specified in NC-Framework)
 
 ```json
 {
@@ -71,7 +71,7 @@ Example command for retrieving the classId (1p1) on any ncaObject using the gene
 }
 ```
 
-Example response for retrieving the classId (1p1) on any ncaObject using the generic get method (1m1).
+Example response for retrieving the classId (1p1) on any ncObject using the generic get method (1m1).
 
 ```json
 {

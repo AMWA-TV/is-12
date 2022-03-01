@@ -1,10 +1,10 @@
 # Data type definition discovery
 
-The `ncaClassManager` can also be used to discover data types using the `GetDataType` method.
+The `ncClassManager` can also be used to discover data types using the `GetDataType` method.
 
 The `GetDataType (3m2)` returns the definition of a data type and requires the type name as an argument.
 
-Example for calling GetDataType (3m2) on the Class Manager (using the oid retrieved from the root block - e.g. 201) when wanting to retrieve the data type definition for `ncaConnectionStatus`
+Example for calling GetDataType (3m2) on the Class Manager (using the oid retrieved from the root block - e.g. 201) when wanting to retrieve the data type definition for `ncConnectionStatus`
 
 ```json
 {
@@ -22,7 +22,7 @@ Example for calling GetDataType (3m2) on the Class Manager (using the oid retrie
       "arguments":
       {
         "identity": {
-          "name": "ncaConnectionStatus"
+          "name": "ncConnectionStatus"
         }
       }
     }
@@ -30,7 +30,7 @@ Example for calling GetDataType (3m2) on the Class Manager (using the oid retrie
 }
 ```
 
-Example response from calling GetDataType (3m2) on the Class Manager for data type `ncaConnectionStatus`
+Example response from calling GetDataType (3m2) on the Class Manager for data type `ncConnectionStatus`
 
 ```json
 {
@@ -43,7 +43,7 @@ Example response from calling GetDataType (3m2) on the Class Manager for data ty
       "result": {
         "status": 0,
         "value": {
-          "name": "ncaConnectionStatus",
+          "name": "ncConnectionStatus",
           "kind": 3,
           "info": [
             "Undefined",

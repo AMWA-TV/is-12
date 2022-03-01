@@ -31,7 +31,7 @@
                 "properties": {
                   "status": {
                     "type": "integer",
-                    "description": "Status of the command. Must include the numeric values for ncaMethodStatus. 0 must be returned if the commands was successful",
+                    "description": "Status of the command. Must include the numeric values for ncMethodStatus. 0 must be returned if the commands was successful",
                     "minimum": 0,
                     "maximum": 65535
                   },
