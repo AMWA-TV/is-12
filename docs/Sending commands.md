@@ -18,7 +18,7 @@ Example for settings the user label (1p7) on any ncObject using the generic set 
       "arguments": {
         "id": {
           "level": 1,
-          "index": 2
+          "index": 7
         },
         "value": "My new label"
       }

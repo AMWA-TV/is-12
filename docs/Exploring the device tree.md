@@ -39,36 +39,48 @@ Example response from calling GetMemberDescriptors (2m1) on the root block
         "status": 0,
         "value": [
           {
-            "role": "SubscriptionManager",
-            "oid": 150,
-            "constantOid": true,
-            "identity": {
-              "id": [1, 7, 4],
-              "version": 1
-            },
-            "userLabel": "Subscription Manager",
-            "owner": 1
-          },
-          {
             "role": "ClassManager",
-            "oid": 201,
+            "oid": 3,
             "constantOid": true,
             "identity": {
-              "id": [1, 7, 14],
-              "version": 1
+              "classID": [
+                1,
+                7,
+                3
+              ],
+              "version": "1.0.0"
             },
-            "userLabel": "Class Manager",
+            "userLabel": "Class manager",
             "owner": 1
           },
           {
-            "role": "ReceiverMonitor_1",
-            "oid": 5000,
+            "role": "SubscriptionManager",
+            "oid": 5,
             "constantOid": true,
             "identity": {
-              "id": [1, 4, 1],
-              "version": 1,
+              "classID": [
+                1,
+                7,
+                5
+              ],
+              "version": "1.0.0"
             },
-            "userLabel": "Receiver monitor for receiver 1",
+            "userLabel": "Subscription manager",
+            "owner": 1
+          },
+          {
+            "role": "ReceiverMonitor_01",
+            "oid": 11,
+            "constantOid": true,
+            "identity": {
+              "classID": [
+                1,
+                4,
+                1
+              ],
+              "version": "1.0.0"
+            },
+            "userLabel": "Receiver monitor 01",
             "owner": 1
           }
           ...
@@ -83,7 +95,7 @@ Example response from calling GetMemberDescriptors (2m1) on the root block
 
 Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block.
 
-Example for calling FindMembersByPath (2m23) on the root block
+Example for calling FindMembersByPath (2m5) on the root block
 
 ```json
 {
@@ -96,7 +108,7 @@ Example for calling FindMembersByPath (2m23) on the root block
       "oid": 1,
       "methodID": {
         "level": 2,
-        "index": 23
+        "index": 5
       },
       "arguments": 
       {
@@ -111,7 +123,7 @@ Example for calling FindMembersByPath (2m23) on the root block
 }
 ```
 
-Example response from calling FindMembersByPath (2m23) on the root block
+Example response from calling FindMembersByPath (2m5) on the root block
 
 ```json
 {
@@ -123,17 +135,22 @@ Example response from calling FindMembersByPath (2m23) on the root block
       "handle": 4,
       "result": {
         "status": 0,
-        "value": {
-          "role": "input",
-          "oid": 264,
-          "constantOid": false,
-          "identity": {
-            "id": [1, 1],
-            "version": 1
-          },
-          "userLabel": "Input group",
-          "owner": 131
-        }
+        "value": [
+          {
+            "role": "input",
+            "oid": 264,
+            "constantOid": false,
+            "identity": {
+              "id": [
+                1,
+                1
+              ],
+              "version": "1.0.0"
+            },
+            "userLabel": "Input group",
+            "owner": 131
+          }
+        ]
       }
     }
   ]

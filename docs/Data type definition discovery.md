@@ -19,11 +19,8 @@ Example for calling GetDataType (3m2) on the Class Manager (using the oid retrie
         "level": 3,
         "index": 2
       },
-      "arguments":
-      {
-        "identity": {
-          "name": "ncConnectionStatus"
-        }
+      "arguments": {
+        "name": "ncConnectionStatus"
       }
     }
   ]
@@ -35,24 +32,37 @@ Example response from calling GetDataType (3m2) on the Class Manager for data ty
 ```json
 {
   "protocolVersion": "1.0",
+  "messageType": "Command",
   "sessionId": 101,
-  "messageType": "CommandResponse",
   "messages": [
     {
-      "handle": 6,
+      "handle": 7,
       "result": {
         "status": 0,
-        "value": {
-          "name": "ncConnectionStatus",
-          "kind": 3,
-          "info": [
-            "Undefined",
-            "Disconnected",
-            "Connecting",
-            "Connected",
-            "ConnectionError"
-          ]
-        }
+        "value": [
+          {
+            "name": "ncConnectionStatus",
+            "type": 3,
+            "content": [
+              {
+                "name": "Undefined",
+                "index": 0
+              },
+              {
+                "name": "Connected",
+                "index": 1
+              },
+              {
+                "name": "Disconnected",
+                "index": 2
+              },
+              {
+                "name": "ConnectionError",
+                "index": 3
+              }
+            ]
+          }
+        ]
       }
     }
   ]
