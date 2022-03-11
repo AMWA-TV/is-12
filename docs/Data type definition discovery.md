@@ -32,7 +32,7 @@ Example response from calling GetDataType (3m2) on the Class Manager for data ty
 ```json
 {
   "protocolVersion": "1.0",
-  "messageType": "Command",
+  "messageType": "CommandResponse",
   "sessionId": 101,
   "messages": [
     {

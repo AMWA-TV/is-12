@@ -41,7 +41,7 @@ Example response from calling GetControlClass (3m1) on the Class Manager for cla
 ```json
 {
   "protocolVersion": "1.0",
-  "messageType": "Command",
+  "messageType": "CommandResponse",
   "sessionId": 101,
   "messages": [
     {
