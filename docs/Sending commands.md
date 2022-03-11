@@ -27,7 +27,7 @@ Example for settings the user label (1p7) on any ncObject using the generic set 
 }
 ```
 
-Example response for settings the user label (1p7) on any ncObject using the generic set method (1m2).
+Example response for setting the user label (1p7) on any ncObject using the generic set method (1m2).
 
 ```json
 {
