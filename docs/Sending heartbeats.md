@@ -20,8 +20,7 @@ Example heartbeat response when OK
   "messages": [
     {
       "response": {
-        "status": 0,
-        "errorMessage": "Could not perform the action succesfully due to an internal error."
+        "status": 0
       }
     }
   ]
