@@ -5,10 +5,10 @@ plugins:
 spec_server: specs.amwa.tv
 
 # AMWA ID
-amwa_id: NC-PROTOCOL
+amwa_id: IS-12
 
 # Base name for site (typically lower case version of AMWA ID, or the repo name)
-baseurl: /nmos-control-protocol
+baseurl: /is-12
 
 # Which release or branch appears in header links and on the home page
 default_tree: branches/v1.0-dev # alternatively e.g. releases/v1.0
