@@ -1,37 +1,44 @@
 # Exploring the device tree
 
-The `GetMemberDescriptors (2m1)` method from NC-Framework can be used to return the descriptions of all members (workers, blocks, agents, managers etc.) of a block.
-Requesting member descriptors for anything other than a block is not allowed and will return an error status code.
+All blocks (NcBlock) contain a members property which holds descriptions of all members (workers, blocks, agents, managers etc.) contained.
+The members for any block can be obtained by invoking the generic Get method (1m1) for the property id (2p10).
+Requesting members for anything other than a block is not allowed and will return an error status code.
 
 The device `root block` MUST always have the static `oid` of `1`. No other object or member must use the `oid` of `1` besides the root block.
 
-Example for calling GetMemberDescriptors (2m1) on the root block
+Example for calling the generic getter (1m1) on the root block to retrieve the members property (2p10)
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "Command",
+  "messageType": 2,
   "messages": [
     {
       "handle": 3,
       "oid": 1,
-      "methodID": {
-        "level": 2,
+      "methodId": {
+        "level": 1,
         "index": 1
+      },
+      "arguments": {
+        "id": {
+          "level": 2,
+          "index": 10
+        }
       }
     }
   ]
 }
 ```
 
-Example response from calling GetMemberDescriptors (2m1) on the root block
+Example response from calling the generic getter (1m1) on the root block to retrieve the members property (2p10)
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
+  "messageType": 3,
   "sessionId": 101,
-  "messageType": "CommandResponse",
   "messages": [
     {
       "handle": 3,
@@ -43,45 +50,51 @@ Example response from calling GetMemberDescriptors (2m1) on the root block
             "oid": 3,
             "constantOid": true,
             "identity": {
-              "classID": [
+              "id": [
                 1,
-                7,
+                3,
                 3
               ],
               "version": "1.0.0"
             },
             "userLabel": "Class manager",
-            "owner": 1
+            "owner": 1,
+            "description": "The class manager offers access to control class and data type descriptors",
+            "constraints": null
           },
           {
             "role": "SubscriptionManager",
             "oid": 5,
             "constantOid": true,
             "identity": {
-              "classID": [
+              "id": [
                 1,
-                7,
+                3,
                 5
               ],
               "version": "1.0.0"
             },
             "userLabel": "Subscription manager",
-            "owner": 1
+            "owner": 1,
+            "description": "The subscription manager offers the ability to subscribe to events on particular objects and properties",
+            "constraints": null
           },
           {
             "role": "ReceiverMonitor_01",
             "oid": 11,
             "constantOid": true,
             "identity": {
-              "classID": [
+              "id": [
                 1,
-                4,
-                1
+                2,
+                2
               ],
               "version": "1.0.0"
             },
             "userLabel": "Receiver monitor 01",
-            "owner": 1
+            "owner": 1,
+            "description": "Receiver monitor worker",
+            "constraints": null
           }
           ...
         ]
@@ -95,27 +108,26 @@ Example response from calling GetMemberDescriptors (2m1) on the root block
 
 Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block.
 
-Example for calling FindMembersByPath (2m5) on the root block
+Example for calling FindMembersByPath (2m2) on the root block
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "Command",
+  "messageType": 2,
   "messages": [
     {
       "handle": 4,
       "oid": 1,
-      "methodID": {
+      "methodId": {
         "level": 2,
-        "index": 5
+        "index": 2
       },
       "arguments": 
       {
         "path": [
-          "block_1",
-          "processor_x",
-          "input"
+          "root",
+          "ReceiverMonitor_01"
         ]
       }
     }
@@ -123,13 +135,13 @@ Example for calling FindMembersByPath (2m5) on the root block
 }
 ```
 
-Example response from calling FindMembersByPath (2m5) on the root block
+Example response from calling FindMembersByPath (2m2) on the root block
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
+  "messageType": 3,
   "sessionId": 101,
-  "messageType": "CommandResponse",
   "messages": [
     {
       "handle": 4,
@@ -137,18 +149,21 @@ Example response from calling FindMembersByPath (2m5) on the root block
         "status": 0,
         "value": [
           {
-            "role": "input",
-            "oid": 264,
-            "constantOid": false,
+            "role": "ReceiverMonitor_01",
+            "oid": 11,
+            "constantOid": true,
             "identity": {
               "id": [
                 1,
-                1
+                2,
+                2
               ],
               "version": "1.0.0"
             },
-            "userLabel": "Input group",
-            "owner": 131
+            "userLabel": "Receiver monitor 01",
+            "owner": 1,
+            "description": "Receiver monitor worker",
+            "constraints": null
           }
         ]
       }

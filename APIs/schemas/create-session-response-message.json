@@ -59,9 +59,9 @@
         },
         "messageType": {
           "description": "Protocol message type",
-          "type": "string",
+          "type": "integer",
           "enum": [
-            "CreateSessionResponse"
+            1
           ]
         }
       }

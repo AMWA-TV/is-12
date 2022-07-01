@@ -2,18 +2,18 @@
 
 A controller can subscribe to all events of an emitter object by using the `SubscriptionManager` found in the root block.
 
-Example for calling AddSubscription (3m1) on the SubscriptionManager (using the oid retrieved from the root block - e.g. 150) for a particular emitter object.
+Example for calling AddSubscription (3m1) on the SubscriptionManager (using the oid retrieved from the root block - e.g. SubscriptionManager oid = 5) for a particular emitter object.
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "Command",
+  "messageType": 2,
   "messages": [
     {
       "handle": 5,
-      "oid": 150,
-      "methodID": {
+      "oid": 5,
+      "methodId": {
         "level": 3,
         "index": 1
       },
@@ -22,7 +22,7 @@ Example for calling AddSubscription (3m1) on the SubscriptionManager (using the 
           "emitterOid": 98119,
           "eventId": {
             "level": 1,
-            "index": 2
+            "index": 1
           }
         }
       }
@@ -31,13 +31,13 @@ Example for calling AddSubscription (3m1) on the SubscriptionManager (using the 
 }
 ```
 
-Example response from calling AddSubscription (3m1) on the SubscriptionManager (using the oid retrieved from the root block - e.g. 150) for a particular emitter object.
+Example response from calling AddSubscription (3m1) on the SubscriptionManager (using the oid retrieved from the root block - SubscriptionManager oid = 5) for a particular emitter object.
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "CommandResponse",
+  "messageType": 3,
   "messages": [
     {
       "handle": 5,
@@ -49,28 +49,28 @@ Example response from calling AddSubscription (3m1) on the SubscriptionManager (
 }
 ```
 
-Example notification for the PropertyChanged event (1e1) when the `role` property (1p6) changes.
+Example notification for the PropertyChanged event (1e1) when the `userLabel` property (1p7) changes.
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "Notification",
+  "messageType": 6,
   "messages": [
     {
-      "type": "Event",
-      "oid": 7777,
-      "eventID": {
+      "type": 0,
+      "oid": 98119,
+      "eventId": {
         "level": 1,
         "index": 1
       },
       "eventData": {
-        "propertyID": {
+        "propertyId": {
           "level": 1,
-          "index": 6
+          "index": 7
         },
         "changeType": 0,
-        "propertyValue": "input_1"
+        "propertyValue": "Input 1"
       }
     }
   ]

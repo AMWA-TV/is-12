@@ -15,15 +15,15 @@
     },
     "messageType": {
       "description": "Protocol message type",
-      "type": "string",
+      "type": "integer",
       "enum": [
-        "CreateSession",
-        "CreateSessionResponse",
-        "Command",
-        "CommandResponse",
-        "Notification",
-        "Heartbeat",
-        "HeartbeatResponse"
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
       ]
     }
   }

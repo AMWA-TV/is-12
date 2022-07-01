@@ -4,8 +4,8 @@ Example session creation
 
 ```json
 {
-  "protocolVersion": "1.0",
-  "messageType": "CreateSession",
+  "protocolVersion": "1.0.0",
+  "messageType": 0,
   "messages": [
     {
       "handle": 1,
@@ -21,8 +21,8 @@ Example session creation response when OK
 
 ```json
 {
-  "protocolVersion": "1.0",
-  "messageType": "CreateSessionResponse",
+  "protocolVersion": "1.0.0",
+  "messageType": 1,
   "messages": [
     {
       "handle": 1,
@@ -40,7 +40,7 @@ Example session creation response when an error has occurred
 ```json
 {
   "protocolVersion": "1.0",
-  "messageType": "CreateSessionResponse",
+  "messageType":1,
   "messages": [
     {
       "handle": 1,

@@ -4,9 +4,9 @@ Example heartbeat message
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "Heartbeat"
+  "messageType": 4
 }
 ```
 
@@ -14,12 +14,12 @@ Example heartbeat response when OK
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
+  "messageType": 5,
   "sessionId": 101,
-  "messageType": "HeartbeatResponse",
   "messages": [
     {
-      "response": {
+      "result": {
         "status": 0
       }
     }
@@ -31,9 +31,9 @@ Example heartbeat response when an error has occurred
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
+  "messageType": 5,
   "sessionId": 101,
-  "messageType": "HeartbeatResponse",
   "messages": [
     {
       "response": {

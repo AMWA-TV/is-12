@@ -21,8 +21,7 @@
             "required": [
               "handle",
               "oid",
-              "methodID",
-              "arguments"
+              "methodId"
             ],
             "properties": {
               "handle": {
@@ -37,7 +36,7 @@
                 "minimum": 1,
                 "maximum": 65535
               },
-              "methodID": {
+              "methodId": {
                 "type": "object",
                 "description": "ID structure for the target method",
                 "required": [
@@ -68,9 +67,9 @@
         },
         "messageType": {
           "description": "Protocol message type",
-          "type": "string",
+          "type": "integer",
           "enum": [
-            "Command"
+            2
           ]
         }
       }
