@@ -18,4 +18,4 @@
 | sequences of primitive types | array of primitive types                 |
 | sequences of struct types    | array of objects                         |
 
-`Note`: NC-Framework will contain typedef definitions. These contain datatypes which forward to other defined datatypes.
+`Note`: [MS-05-02](https://specs.amwa.tv/ms-05-02) will also contain typedef definitions. These contain datatypes which forward to other defined datatypes.

@@ -100,7 +100,7 @@
                   },
                   "propertyValue": {
                     "type": ["string", "number", "object", "array", "boolean", "null" ],
-                    "description": "Property value as described in the NC-Framework Class definition or in a private Class definition"
+                    "description": "Property value as described in the MS-05-02 Class definition or in a private Class definition"
                   }
                 }
               }
