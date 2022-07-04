@@ -24,7 +24,7 @@ enum MessageType {
   Command = 2,
   CommandResponse = 3,
   Heartbeat = 4,
-  HeartbeatResponse = 5
+  HeartbeatResponse = 5,
   Notification = 6,
 }
 ```
