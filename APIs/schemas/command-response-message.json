@@ -44,7 +44,7 @@
                   },
                   "value": {
                     "type": ["string", "number", "object", "array", "boolean", "null" ],
-                    "description": "Method value as described in the NC-Framework Type definition or in a private Type definition"
+                    "description": "Method value as described in the MS-05-02 Type definition or in a private Type definition"
                   },
                   "errorMessage": {
                     "description": "Error message associated with the failure of the command (optional)",
@@ -57,9 +57,9 @@
         },
         "messageType": {
           "description": "Protocol message type",
-          "type": "string",
+          "type": "integer",
           "enum": [
-            "CommandResponse"
+            3
           ]
         }
       }

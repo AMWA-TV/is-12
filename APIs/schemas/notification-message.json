@@ -21,15 +21,16 @@
             "required": [
               "type",
               "oid",
-              "eventID",
+              "eventId",
               "eventData"
             ],
             "properties": {
               "type": {
                 "description": "Message type",
-                "type": "string",
+                "type": "number",
                 "enum": [
-                  "Event"
+                  0,
+                  1
                 ]
               },
               "oid": {
@@ -38,7 +39,7 @@
                 "minimum": 1,
                 "maximum": 65535
               },
-              "eventID": {
+              "eventId": {
                 "type": "object",
                 "description": "Event ID structure",
                 "required": [
@@ -64,12 +65,12 @@
                 "type": "object",
                 "description": "Message result",
                 "required": [
-                  "propertyID",
+                  "propertyId",
                   "changeType",
                   "propertyValue"
                 ],
                 "properties": {
-                  "propertyID": {
+                  "propertyId": {
                     "type": "object",
                     "description": "Property ID structure",
                     "required": [
@@ -99,7 +100,7 @@
                   },
                   "propertyValue": {
                     "type": ["string", "number", "object", "array", "boolean", "null" ],
-                    "description": "Property value as described in the NC-Framework Class definition or in a private Class definition"
+                    "description": "Property value as described in the MS-05-02 Class definition or in a private Class definition"
                   }
                 }
               }
@@ -108,9 +109,9 @@
         },
         "messageType": {
           "description": "Protocol message type",
-          "type": "string",
+          "type": "integer",
           "enum": [
-            "Notification"
+            6
           ]
         }
       }

@@ -19,6 +19,12 @@ Sets out the rules and requirements for implementing the NMOS Device Control pro
 
 Describes a standard way of exposing NMOS Control models which can be consumed and interacted with.
 
+### Other specifications in the suite
+
+- [MS-05-01 NMOS Control Architecture](https://specs.amwa.tv/ms-05-01)
+- [MS-05-02 NMOS Control Framework](https://specs.amwa.tv/ms-05-02)
+- [MS-05-03 NMOS Control Block Specifications](https://specs.amwa.tv/ms-05-03)
+
 <!-- INTRO-END -->
 
 ## Getting started

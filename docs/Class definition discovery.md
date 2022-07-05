@@ -1,47 +1,46 @@
 # Class definition discovery
 
-NC-Framework defines a class discovery mechanism which can be used for discovering details of class definitions. This is offered through a set of methods which exist in the `ncClassManager`. The `ncClassManager` can be discovered using the `GetMemberDescriptors` method shown in the earlier examples.
+[MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism which can be used for discovering details of class definitions. This is offered through a set of methods which exist in the `NcClassManager`. The `NcClassManager` can be found in the members of the root block as shown in the earlier examples.
 
-`Note`: Definitions are not provided for the base class and only contain properties, methods and events defined in the actual class. The controller SHOULD inquire further if the base class is not known. The identity information will contain a class ID which always contains the chain of inheritance (e.g. `"classID": [1,7,3]` shows that this class inherits from the class with `"classID": [1,7]`).
+The `GetControlClass (3m1)` returns a sequence of class descriptors and requires the following arguments:
 
-The `GetControlClass (3m1)` returns the definition of a class and requires an identity argument which consists of:
+* identity - of type `NcClassIdentity`
+* allElements - boolean flag which if set will include inherited class elements in the descriptors
 
-* ID - class ID numeric array
-* version - the version of the class
-
-Example for calling GetControlClass (3m1) on the Class Manager (using the oid retrieved from the root block - e.g. 201) when wanting to retrieve the class definition for ncReceiverMonitor (1,4,1)
+Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,1)
 
 ```json
 {
-  "protocolVersion": "1.0",
+  "protocolVersion": "1.0.0",
   "sessionId": 101,
-  "messageType": "Command",
+  "messageType": 2,
   "messages": [
     {
       "handle": 6,
-      "oid": 201,
-      "methodID": {
+      "oid": 3,
+      "methodId": {
         "level": 3,
         "index": 1
       },
       "arguments":
       {
         "identity": {
-          "classID": [1, 4, 1],
+          "id": [1, 2, 2],
           "version": "1.0.0"
-        }
+        },
+        "allElements": true
       }
     }
   ]
 }
 ```
 
-Example response from calling GetControlClass (3m1) on the Class Manager for class ncReceiverMonitor (1,4,1)
+Example response from calling GetControlClass (3m1) on the ClassManager for class NcReceiverMonitor (1,2,2)
 
 ```json
 {
-  "protocolVersion": "1.0",
-  "messageType": "CommandResponse",
+  "protocolVersion": "1.0.0",
+  "messageType": 3,
   "sessionId": 101,
   "messages": [
     {
@@ -53,354 +52,455 @@ Example response from calling GetControlClass (3m1) on the Class Manager for cla
             "description": "NcReceiverMonitor class descriptor",
             "properties": [
               {
+                "description": "TRUE iff worker is enabled",
+                "id": {
+                  "level": 2,
+                  "index": 1
+                },
+                "name": "enabled",
+                "typeName": "NcBoolean",
+                "readOnly": false,
+                "persistent": true,
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
+              },
+              {
+                "description": "Connection status property",
                 "id": {
                   "level": 3,
                   "index": 1
                 },
                 "name": "connectionStatus",
-                "typeName": "ncConnectionStatus",
+                "typeName": "NcConnectionStatus",
                 "readOnly": true,
                 "persistent": false,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Connection status message property",
                 "id": {
                   "level": 3,
                   "index": 2
                 },
                 "name": "connectionStatusMessage",
-                "typeName": "ncString",
+                "typeName": "NcString",
                 "readOnly": true,
                 "persistent": false,
-                "required": true
+                "isNullable": true,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Payload status property",
                 "id": {
                   "level": 3,
                   "index": 3
                 },
                 "name": "payloadStatus",
-                "typeName": "ncPayloadStatus",
+                "typeName": "NcPayloadStatus",
                 "readOnly": true,
                 "persistent": false,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Payload status message property",
                 "id": {
                   "level": 3,
                   "index": 4
                 },
                 "name": "payloadStatusMessage",
-                "typeName": "ncString",
+                "typeName": "NcString",
                 "readOnly": true,
                 "persistent": false,
-                "required": true
+                "isNullable": true,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Class identity",
                 "id": {
                   "level": 1,
                   "index": 1
                 },
                 "name": "classId",
-                "typeName": "ncClassID",
+                "typeName": "NcClassId",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Class version",
                 "id": {
                   "level": 1,
                   "index": 2
                 },
                 "name": "classVersion",
-                "typeName": "ncVersionCode",
+                "typeName": "NcVersionCode",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Object identifier",
                 "id": {
                   "level": 1,
                   "index": 3
                 },
                 "name": "oid",
-                "typeName": "ncOid",
+                "typeName": "NcOid",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "TRUE iff OID is hardwired into device",
                 "id": {
                   "level": 1,
                   "index": 4
                 },
                 "name": "constantOid",
-                "typeName": "ncBoolean",
+                "typeName": "NcBoolean",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "OID of containing block. Can only ever be null for the root block",
                 "id": {
                   "level": 1,
                   "index": 5
                 },
                 "name": "owner",
-                "typeName": "ncOid",
+                "typeName": "NcOid",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": true,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "role of obj in containing block",
                 "id": {
                   "level": 1,
                   "index": 6
                 },
                 "name": "role",
-                "typeName": "ncOid",
+                "typeName": "NcName",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Scribble strip",
                 "id": {
                   "level": 1,
                   "index": 7
                 },
                 "name": "userLabel",
-                "typeName": "ncOid",
+                "typeName": "NcString",
                 "readOnly": false,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Flag signalling if the object can be locked",
                 "id": {
                   "level": 1,
                   "index": 8
                 },
                 "name": "lockable",
-                "typeName": "ncOid",
+                "typeName": "NcBoolean",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Enum property exposing the lock state",
                 "id": {
                   "level": 1,
                   "index": 9
                 },
                 "name": "lockState",
-                "typeName": "ncOid",
+                "typeName": "NcLockState",
                 "readOnly": false,
                 "persistent": false,
-                "required": true
+                "isNullable": false,
+                "isSequence": false,
+                "constraints": null
               },
               {
+                "description": "Touchpoints to other contexts",
                 "id": {
                   "level": 1,
                   "index": 10
                 },
                 "name": "touchpoints",
-                "typeName": "ncTouchpoint",
+                "typeName": "NcTouchpoint",
                 "readOnly": true,
                 "persistent": true,
-                "required": true
+                "isNullable": true,
+                "isSequence": true,
+                "constraints": null
               }
             ],
             "methods": [
               {
+                "description": "Method to retrieve both connection status and payload status in one call",
                 "id": {
                   "level": 3,
                   "index": 1
                 },
-                "name": "getStatus",
-                "resultDatatype": "ncMethodResultReceiverStatus",
+                "name": "GetStatus",
+                "resultDatatype": "NcMethodResultReceiverStatus",
                 "parameters": []
               },
               {
+                "description": "Get property value",
                 "id": {
                   "level": 1,
                   "index": 1
                 },
-                "name": "get",
-                "resultDatatype": "ncMethodResultPropertyValue",
+                "name": "Get",
+                "resultDatatype": "NcMethodResultPropertyValue",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Set property value",
                 "id": {
                   "level": 1,
                   "index": 2
                 },
-                "name": "set",
-                "resultDatatype": "ncMethodResult",
+                "name": "Set",
+                "resultDatatype": "NcMethodResult",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Property value",
                     "name": "value",
-                    "typeName": "",
-                    "required": true
+                    "typeName": null,
+                    "isNullable": true,
+                    "isSequence": null,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Sets property to initial value",
                 "id": {
                   "level": 1,
                   "index": 3
                 },
-                "name": "clear",
-                "resultDatatype": "ncMethodResult",
+                "name": "Clear",
+                "resultDatatype": "NcMethodResult",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Get sequence item",
                 "id": {
                   "level": 1,
                   "index": 4
                 },
-                "name": "getCollectionItem",
-                "resultDatatype": "ncMethodResultPropertyValue",
+                "name": "GetSequenceItem",
+                "resultDatatype": "NcMethodResultPropertyValue",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Index of item in the sequence",
                     "name": "index",
-                    "typeName": "ncId32",
-                    "required": true
+                    "typeName": "NcId32",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Set sequence item value",
                 "id": {
                   "level": 1,
                   "index": 5
                 },
-                "name": "setCollectionItem",
-                "resultDatatype": "ncMethodResult",
+                "name": "SetSequenceItem",
+                "resultDatatype": "NcMethodResult",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Index of item in the sequence",
                     "name": "index",
-                    "typeName": "ncId32",
-                    "required": true
+                    "typeName": "NcId32",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Value",
                     "name": "value",
-                    "typeName": "",
-                    "required": true
+                    "typeName": null,
+                    "isNullable": true,
+                    "isSequence": null,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Add item to sequence",
                 "id": {
                   "level": 1,
                   "index": 6
                 },
-                "name": "addCollectionItem",
-                "resultDatatype": "ncMethodResultId32",
+                "name": "AddSequenceItem",
+                "resultDatatype": "NcMethodResultId32",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Value",
                     "name": "value",
-                    "typeName": "",
-                    "required": true
+                    "typeName": null,
+                    "isNullable": true,
+                    "isSequence": null,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Delete sequence item",
                 "id": {
                   "level": 1,
                   "index": 7
                 },
-                "name": "removeCollectionItem",
-                "resultDatatype": "ncMethodResult",
+                "name": "RemoveSequenceItem",
+                "resultDatatype": "NcMethodResult",
                 "parameters": [
                   {
+                    "description": "Property id",
                     "name": "id",
-                    "typeName": "ncPropertyId",
-                    "required": true
+                    "typeName": "NcPropertyId",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Index of item in the sequence",
                     "name": "index",
-                    "typeName": "ncId32",
-                    "required": true
+                    "typeName": "NcId32",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Lock method",
                 "id": {
                   "level": 1,
                   "index": 8
                 },
-                "name": "lockWait",
-                "resultDatatype": "ncMethodResult",
+                "name": "LockWait",
+                "resultDatatype": "NcMethodResult",
                 "parameters": [
                   {
-                    "name": "target",
-                    "typeName": "ncOid",
-                    "required": true
-                  },
-                  {
+                    "description": "Type of lock requested, or unlock",
                     "name": "requestedLockStatus",
-                    "typeName": "ncLockStatus",
-                    "required": true
+                    "typeName": "NcLockState",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   },
                   {
+                    "description": "Method fails if wait exceeds this.  0=forever",
                     "name": "timeout",
-                    "typeName": "ncTimeInterval",
-                    "required": true
+                    "typeName": "NcTimeInterval",
+                    "isNullable": false,
+                    "isSequence": false,
+                    "constraints": null
                   }
                 ]
               },
               {
+                "description": "Abort all this session's lock waits on this object",
                 "id": {
                   "level": 1,
                   "index": 9
                 },
-                "name": "abortWaits",
-                "resultDatatype": "ncMethodResult",
-                "parameters": [
-                  {
-                    "name": "target",
-                    "typeName": "ncOid",
-                    "required": true
-                  }
-                ]
+                "name": "AbortLockWaits",
+                "resultDatatype": "NcMethodResult",
+                "parameters": []
               }
             ],
             "events": [
               {
+                "description": "Property changed event",
                 "id": {
                   "level": 1,
                   "index": 1
                 },
                 "name": "PropertyChanged",
-                "eventDatatype": "ncPropertyChangedEventData"
+                "eventDatatype": "NcPropertyChangedEventData"
               }
             ]
           }
