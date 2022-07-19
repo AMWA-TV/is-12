@@ -1,6 +1,6 @@
 # Sending commands
 
-Example for settings the user label (1p7) on any NcObject using the generic set method (1m2) (requires arguments but does not return a value)
+Example for setting the user label (1p7) on any NcObject using the generic set method (1m2) (requires arguments but does not return a value)
 
 ```json
 {
