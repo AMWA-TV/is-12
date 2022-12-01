@@ -12,7 +12,6 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
 ```json
 {
   "protocolVersion": "1.0.0",
-  "sessionId": 101,
   "messageType": 2,
   "messages": [
     {
@@ -41,7 +40,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
 {
   "protocolVersion": "1.0.0",
   "messageType": 3,
-  "sessionId": 101,
   "messages": [
     {
       "handle": 6,
