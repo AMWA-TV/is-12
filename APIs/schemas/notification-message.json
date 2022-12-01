@@ -26,7 +26,7 @@
             ],
             "properties": {
               "type": {
-                "description": "Message type",
+                "description": "Notification type as defined by NcNotificationType in MS-05-02",
                 "type": "number",
                 "enum": [
                   0,
@@ -111,7 +111,7 @@
           "description": "Protocol message type",
           "type": "integer",
           "enum": [
-            6
+            2
           ]
         }
       }
