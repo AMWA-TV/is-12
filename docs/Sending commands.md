@@ -5,7 +5,7 @@ Example for setting the user label (1p7) on any NcObject using the generic set m
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 2,
+  "messageType": 0,
   "messages": [
     {
       "handle": 2,
@@ -31,7 +31,7 @@ Example response for setting the user label (1p7) on any NcObject using the gene
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 3,
+  "messageType": 1,
   "messages": [
     {
       "handle": 2,
@@ -48,7 +48,7 @@ Example command for retrieving the classId (1p1) on any NcObject using the gener
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 2,
+  "messageType": 0,
   "messages": [
     {
       "handle": 2,
@@ -73,7 +73,7 @@ Example response for retrieving the classId (1p1) on any NcObject using the gene
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 3,
+  "messageType": 1,
   "messages": [
     {
       "handle": 2,

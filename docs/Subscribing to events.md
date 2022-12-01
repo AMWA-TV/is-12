@@ -7,7 +7,7 @@ Example for calling AddSubscription (3m1) on the SubscriptionManager (using the 
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 2,
+  "messageType": 0,
   "messages": [
     {
       "handle": 5,
@@ -35,7 +35,7 @@ Example response from calling AddSubscription (3m1) on the SubscriptionManager (
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 3,
+  "messageType": 1,
   "messages": [
     {
       "handle": 5,
@@ -52,7 +52,7 @@ Example notification for the PropertyChanged event (1e1) when the `userLabel` pr
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 6,
+  "messageType": 2,
   "messages": [
     {
       "type": 0,

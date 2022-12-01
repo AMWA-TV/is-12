@@ -11,7 +11,7 @@ Example for calling the generic getter (1m1) on the root block to retrieve the m
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 2,
+  "messageType": 0,
   "messages": [
     {
       "handle": 3,
@@ -36,7 +36,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 3,
+  "messageType": 1,
   "messages": [
     {
       "handle": 3,
@@ -111,7 +111,7 @@ Example for calling FindMembersByPath (2m2) on the root block
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 2,
+  "messageType": 0,
   "messages": [
     {
       "handle": 4,
@@ -137,7 +137,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 3,
+  "messageType": 1,
   "messages": [
     {
       "handle": 4,
