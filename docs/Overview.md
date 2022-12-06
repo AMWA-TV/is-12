@@ -7,4 +7,4 @@ This document relies on previous familiarity with the following existing documen
 - [AMWA MS-05-01 NMOS Control Architecture](https://specs.amwa.tv/ms-05-01)
 - [AMWA MS-05-02 NMOS Control Framework](https://specs.amwa.tv/ms-05-02)
 
-A set of workflow examples are described in the [Examples](Creating%20a%20session.md) section.
+A set of workflow examples are described in the [Examples](Sending%20commands.md) section.

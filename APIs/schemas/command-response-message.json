@@ -59,7 +59,7 @@
           "description": "Protocol message type",
           "type": "integer",
           "enum": [
-            3
+            1
           ]
         }
       }

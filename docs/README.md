@@ -12,10 +12,8 @@
 
 ### Examples
 
-- [Creating a session](Creating%20a%20session.md)
 - [Sending commands](Sending%20commands.md)
 - [Exploring the device tree](Exploring%20the%20device%20tree.md)
 - [Subscribing to events](Subscribing%20to%20events.md)
-- [Sending heartbeats](Sending%20heartbeats.md)
 - [Class definition discovery](Class%20definition%20discovery.md)
 - [Data type definition discovery](Data%20type%20definition%20discovery.md)

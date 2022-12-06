@@ -5,7 +5,7 @@ All protocol messages must have have the following 2 properties:
 * protocolVersion - describes the version of this protocol (e.g. 1.0.0)
 * messageType - describes the message type (e.g. Command)
 
-`Note`: When sending messages, each message must contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `Heartbeat` message type does not contain any messages so does not require a `handle`. The `handle` has no programmatic significance for the device.
+`Note`: When sending messages, each message must contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
 
 `Note`: All message results will return a response which inherits from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). This contains at the very least a status of type `NcMethodStatus` and an optional errorMessage of type `NcString`.
 
@@ -19,27 +19,16 @@ Data types:
 
 ```typescript
 enum MessageType {
-  CreateSession = 0,
-  CreateSessionResponse = 1,
-  Command = 2,
-  CommandResponse = 3,
-  Heartbeat = 4,
-  HeartbeatResponse = 5,
-  Notification = 6,
+  Command = 0,
+  CommandResponse = 1,
+  Notification = 2,
 }
 ```
 
-## Session creation
+## Control session
 
-When first connecting to a device, a controller MUST first ask for the creation of a session. This is achieved by sending a `CreateSession` message with a desired `heartBeatTime`. This value represents how often the controller MUST send messages back to the device to maintain the connection and session. If no control messages are sent in the interval the controller MUST send heartbeat messages as described in the `Heartbeats` subsection.
-
-The device MUST respond with an `NcMethodResultSessionID` result. If the creation of the session is successful the result will contain a session id value. Alternatively if the creation failed it must signal the error status code and return an error message as specified by the base `NcMethodResult`.
-
-The controller MUST use the `session ID` for subsequent transactions with the device.
-
-The `session ID` value type is of type `NcSessionId` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02).
-
-`Note`: All `CreateSession` message responses will return a `NcMethodResultSessionID` result which inherits from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02).
+The control session context is delegated to the underlying WebSocket transport and its built in mechanisms for detecting communication failure.
+When a communication failure occurs, then both the controller and the device MUST dispose of the current WebSocket connection. Controllers can open a new WebSocket connection, but any previous control context is lost and must be recreated (e.g. subscriptions have to be reissued and initial states have to be reacquired).
 
 ## Command message type
 
@@ -66,9 +55,3 @@ Each message must have the following:
 * oid - unique object id of the emitter
 * eventId - unique event Id specified as a level and index.
 * eventData - For notifications of type `Event` eventData is of type `NcPropertyChangedEventData` whereas for notifications of type `SubscriptionEnd` eventData is of type `NcSubscriptionEndEventData` (see [MS-05-02](https://specs.amwa.tv/ms-05-02) for type definitions).
-
-## Heartbeats
-
-Controllers MUST send heartbeats for their sessions at the intervals specified when creating the session if no other control messages are sent in that interval.
-
-Devices MUST acknowledge each heartbeat with a response. If a heartbeat falls out of the interval they MUST signal the error.

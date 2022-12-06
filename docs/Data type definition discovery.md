@@ -12,8 +12,7 @@ Example for calling GetDataType (3m2) on the ClassManager (using the oid retriev
 ```json
 {
   "protocolVersion": "1.0.0",
-  "sessionId": 101,
-  "messageType": 2,
+  "messageType": 0,
   "messages": [
     {
       "handle": 7,
@@ -35,8 +34,7 @@ Example response from calling GetDataType (3m2) on the ClassManager for data typ
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 3,
-  "sessionId": 101,
+  "messageType": 1,
   "messages": [
     {
       "handle": 7,
