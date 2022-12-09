@@ -218,38 +218,10 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "constraints": null
               },
               {
-                "description": "Flag signalling if the object can be locked",
-                "id": {
-                  "level": 1,
-                  "index": 8
-                },
-                "name": "lockable",
-                "typeName": "NcBoolean",
-                "readOnly": true,
-                "persistent": true,
-                "isNullable": false,
-                "isSequence": false,
-                "constraints": null
-              },
-              {
-                "description": "Enum property exposing the lock state",
-                "id": {
-                  "level": 1,
-                  "index": 9
-                },
-                "name": "lockState",
-                "typeName": "NcLockState",
-                "readOnly": false,
-                "persistent": false,
-                "isNullable": false,
-                "isSequence": false,
-                "constraints": null
-              },
-              {
                 "description": "Touchpoints to other contexts",
                 "id": {
                   "level": 1,
-                  "index": 10
+                  "index": 8
                 },
                 "name": "touchpoints",
                 "typeName": "NcTouchpoint",
@@ -318,29 +290,10 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 ]
               },
               {
-                "description": "Sets property to initial value",
-                "id": {
-                  "level": 1,
-                  "index": 3
-                },
-                "name": "Clear",
-                "resultDatatype": "NcMethodResult",
-                "parameters": [
-                  {
-                    "description": "Property id",
-                    "name": "id",
-                    "typeName": "NcPropertyId",
-                    "isNullable": false,
-                    "isSequence": false,
-                    "constraints": null
-                  }
-                ]
-              },
-              {
                 "description": "Get sequence item",
                 "id": {
                   "level": 1,
-                  "index": 4
+                  "index": 3
                 },
                 "name": "GetSequenceItem",
                 "resultDatatype": "NcMethodResultPropertyValue",
@@ -367,7 +320,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "description": "Set sequence item value",
                 "id": {
                   "level": 1,
-                  "index": 5
+                  "index": 4
                 },
                 "name": "SetSequenceItem",
                 "resultDatatype": "NcMethodResult",
@@ -402,7 +355,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "description": "Add item to sequence",
                 "id": {
                   "level": 1,
-                  "index": 6
+                  "index": 5
                 },
                 "name": "AddSequenceItem",
                 "resultDatatype": "NcMethodResultId32",
@@ -429,7 +382,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "description": "Delete sequence item",
                 "id": {
                   "level": 1,
-                  "index": 7
+                  "index": 6
                 },
                 "name": "RemoveSequenceItem",
                 "resultDatatype": "NcMethodResult",
@@ -451,43 +404,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                     "constraints": null
                   }
                 ]
-              },
-              {
-                "description": "Lock method",
-                "id": {
-                  "level": 1,
-                  "index": 8
-                },
-                "name": "LockWait",
-                "resultDatatype": "NcMethodResult",
-                "parameters": [
-                  {
-                    "description": "Type of lock requested, or unlock",
-                    "name": "requestedLockStatus",
-                    "typeName": "NcLockState",
-                    "isNullable": false,
-                    "isSequence": false,
-                    "constraints": null
-                  },
-                  {
-                    "description": "Method fails if wait exceeds this.  0=forever",
-                    "name": "timeout",
-                    "typeName": "NcTimeInterval",
-                    "isNullable": false,
-                    "isSequence": false,
-                    "constraints": null
-                  }
-                ]
-              },
-              {
-                "description": "Abort all this session's lock waits on this object",
-                "id": {
-                  "level": 1,
-                  "index": 9
-                },
-                "name": "AbortLockWaits",
-                "resultDatatype": "NcMethodResult",
-                "parameters": []
               }
             ],
             "events": [
