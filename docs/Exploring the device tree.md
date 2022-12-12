@@ -41,7 +41,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
     {
       "handle": 3,
       "result": {
-        "status": 0,
+        "status": 200,
         "value": [
           {
             "role": "ClassManager",
@@ -142,7 +142,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
     {
       "handle": 4,
       "result": {
-        "status": 0,
+        "status": 200,
         "value": [
           {
             "role": "ReceiverMonitor_01",

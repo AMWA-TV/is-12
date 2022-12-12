@@ -44,7 +44,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
     {
       "handle": 6,
       "result": {
-        "status": 0,
+        "status": 200,
         "value": [
           {
             "description": "NcReceiverMonitor class descriptor",

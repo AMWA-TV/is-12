@@ -36,7 +36,7 @@ Example response for setting the user label (1p7) on any NcObject using the gene
     {
       "handle": 2,
       "result": {
-        "status": 0
+        "status": 200
       }
     }
   ]
@@ -78,7 +78,7 @@ Example response for retrieving the classId (1p1) on any NcObject using the gene
     {
       "handle": 2,
       "result": {
-        "status": 0,
+        "status": 200,
         "value": [1, 7, 1]
       }
     }

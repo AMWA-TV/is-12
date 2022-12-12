@@ -39,7 +39,7 @@ Example response from calling GetDataType (3m2) on the ClassManager for data typ
     {
       "handle": 7,
       "result": {
-        "status": 0,
+        "status": 200,
         "value": [
           {
             "description": "Connection status enum data type",
