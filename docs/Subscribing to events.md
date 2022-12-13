@@ -40,7 +40,7 @@ Example response from calling AddSubscription (3m1) on the SubscriptionManager (
     {
       "handle": 5,
       "result": {
-        "status": 0
+        "status": 200
       }
     }
   ]
