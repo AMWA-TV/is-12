@@ -17,13 +17,7 @@ Example for calling AddSubscription (3m1) on the SubscriptionManager (using the 
         "index": 1
       },
       "arguments": {
-        "event": {
-          "emitterOid": 98119,
-          "eventId": {
-            "level": 1,
-            "index": 1
-          }
-        }
+        "oid": 98119
       }
     }
   ]
@@ -55,19 +49,15 @@ Example notification for the PropertyChanged event (1e1) when the `userLabel` pr
   "messageType": 2,
   "messages": [
     {
-      "type": 0,
       "oid": 98119,
-      "eventId": {
-        "level": 1,
-        "index": 1
-      },
       "eventData": {
         "propertyId": {
           "level": 1,
           "index": 7
         },
         "changeType": 0,
-        "propertyValue": "Input 1"
+        "value": "Input 1",
+        "sequenceItemIndex": null
       }
     }
   ]
