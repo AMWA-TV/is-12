@@ -19,47 +19,15 @@
           "items": {
             "type": "object",
             "required": [
-              "type",
               "oid",
-              "eventId",
               "eventData"
             ],
             "properties": {
-              "type": {
-                "description": "Notification type as defined by NcNotificationType in MS-05-02",
-                "type": "number",
-                "enum": [
-                  0,
-                  1
-                ]
-              },
               "oid": {
                 "type": "integer",
                 "description": "Emitter object id",
                 "minimum": 1,
                 "maximum": 65535
-              },
-              "eventId": {
-                "type": "object",
-                "description": "Event ID structure",
-                "required": [
-                  "level",
-                  "index"
-                ],
-                "properties": {
-                  "level": {
-                    "type": "integer",
-                    "description": "Level component of the event ID",
-                    "minimum": 0,
-                    "maximum": 65535
-                  },
-                  "index": {
-                    "type": "integer",
-                    "description": "Index component of the event ID",
-                    "minimum": 1,
-                    "maximum": 65535
-                  }
-                }
               },
               "eventData": {
                 "type": "object",
@@ -67,7 +35,8 @@
                 "required": [
                   "propertyId",
                   "changeType",
-                  "propertyValue"
+                  "value",
+                  "sequenceItemIndex"
                 ],
                 "properties": {
                   "propertyId": {
@@ -98,9 +67,13 @@
                     "minimum": 0,
                     "maximum": 65535
                   },
-                  "propertyValue": {
+                  "value": {
                     "type": ["string", "number", "object", "array", "boolean", "null" ],
                     "description": "Property value as described in the MS-05-02 Class definition or in a private Class definition"
+                  },
+                  "sequenceItemIndex": {
+                    "type": ["number", "null" ],
+                    "description": "Index of sequence item if the property is a sequence"
                   }
                 }
               }

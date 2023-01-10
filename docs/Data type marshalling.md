@@ -5,7 +5,6 @@
 | enums                        | Integer associated enum value            |
 | NcString                     | string                                   |
 | NcBoolean                    | boolean                                  |
-| NcInt8                       | number                                   |
 | NcInt16                      | number                                   |
 | NcInt32                      | number                                   |
 | NcInt64                      | number                                   |
