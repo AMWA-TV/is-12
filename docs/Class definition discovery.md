@@ -6,7 +6,7 @@ The `GetControlClass (3m1)` returns a single class descriptor (the descriptor in
 
 * identity - of type `NcClassIdentity`
 
-Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,1)
+Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,3)
 
 ```json
 {
@@ -23,7 +23,7 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
       "arguments":
       {
         "identity": {
-          "id": [1, 2, 2],
+          "id": [1, 2, 3],
           "version": "1.0.0"
         }
       }
@@ -32,7 +32,7 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
 }
 ```
 
-Example response from calling GetControlClass (3m1) on the ClassManager for class NcReceiverMonitor (1,2,2)
+Example response from calling GetControlClass (3m1) on the ClassManager for class NcReceiverMonitor (1,2,3)
 
 ```json
 {
