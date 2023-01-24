@@ -85,7 +85,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
               "id": [
                 1,
                 2,
-                2
+                3
               ],
               "version": "1.0.0"
             },
@@ -152,7 +152,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
               "id": [
                 1,
                 2,
-                2
+                3
               ],
               "version": "1.0.0"
             },
