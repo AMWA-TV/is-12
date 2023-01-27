@@ -12,7 +12,7 @@ Example for calling the generic getter (1m1) on the root block to retrieve the m
 {
   "protocolVersion": "1.0.0",
   "messageType": 0,
-  "messages": [
+  "commands": [
     {
       "handle": 3,
       "oid": 1,
@@ -37,7 +37,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
 {
   "protocolVersion": "1.0.0",
   "messageType": 1,
-  "messages": [
+  "responses": [
     {
       "handle": 3,
       "result": {
@@ -112,7 +112,7 @@ Example for calling FindMembersByPath (2m2) on the root block
 {
   "protocolVersion": "1.0.0",
   "messageType": 0,
-  "messages": [
+  "commands": [
     {
       "handle": 4,
       "oid": 1,
@@ -138,7 +138,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
 {
   "protocolVersion": "1.0.0",
   "messageType": 1,
-  "messages": [
+  "responses": [
     {
       "handle": 4,
       "result": {

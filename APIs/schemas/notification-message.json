@@ -10,11 +10,11 @@
     {
       "type": "object",
       "required": [
-        "messages"
+        "notifications"
       ],
       "properties": {
         "messages": {
-          "description": "Messages being transmited in this transaction",
+          "description": "Notifications being transmited in this transaction",
           "type": "array",
           "items": {
             "type": "object",
@@ -31,7 +31,7 @@
               },
               "eventData": {
                 "type": "object",
-                "description": "Message result",
+                "description": "Notification event data",
                 "required": [
                   "propertyId",
                   "changeType",
@@ -63,7 +63,7 @@
                   },
                   "changeType": {
                     "type": "integer",
-                    "description": "Event change type numeric value. Must include the numeric values for ncPropertyChangeType",
+                    "description": "Event change type numeric value. Must include the numeric values for NcPropertyChangeType",
                     "minimum": 0,
                     "maximum": 65535
                   },
