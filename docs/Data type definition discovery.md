@@ -12,7 +12,7 @@ Example for calling GetDataType (3m2) on the ClassManager (using the oid retriev
 {
   "protocolVersion": "1.0.0",
   "messageType": 0,
-  "messages": [
+  "commands": [
     {
       "handle": 7,
       "oid": 3,
@@ -34,7 +34,7 @@ Example response from calling GetDataType (3m2) on the ClassManager for data typ
 {
   "protocolVersion": "1.0.0",
   "messageType": 1,
-  "messages": [
+  "responses": [
     {
       "handle": 7,
       "result": {

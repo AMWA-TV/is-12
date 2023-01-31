@@ -10,11 +10,11 @@
     {
       "type": "object",
       "required": [
-        "messages"
+        "commands"
       ],
       "properties": {
-        "messages": {
-          "description": "Messages being transmited in this transaction",
+        "commands": {
+          "description": "Commands being transmited in this transaction",
           "type": "array",
           "items": {
             "type": "object",
@@ -26,7 +26,7 @@
             "properties": {
               "handle": {
                 "type": "integer",
-                "description": "Message integer value used for pairing with the response",
+                "description": "Integer value used for pairing with the response",
                 "minimum": 1,
                 "maximum": 65535
               },
@@ -52,7 +52,7 @@
                   },
                   "index": {
                     "type": "integer",
-                    "description": "Index component of the propmethoderty ID",
+                    "description": "Index component of the method ID",
                     "minimum": 1,
                     "maximum": 65535
                   }
@@ -60,7 +60,7 @@
               },
               "arguments": {
                 "type": "object",
-                "description": "Message arguments"
+                "description": "Method arguments"
               }
             }
           }
