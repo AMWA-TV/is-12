@@ -13,7 +13,7 @@
         "commands"
       ],
       "properties": {
-        "messages": {
+        "commands": {
           "description": "Commands being transmited in this transaction",
           "type": "array",
           "items": {

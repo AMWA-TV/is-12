@@ -13,7 +13,7 @@
         "responses"
       ],
       "properties": {
-        "messages": {
+        "responses": {
           "description": "Responses being transmited in this transaction",
           "type": "array",
           "items": {
