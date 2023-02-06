@@ -193,7 +193,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "index": 6
               },
               "name": "role",
-              "typeName": "NcName",
+              "typeName": "NcString",
               "readOnly": true,
               "persistent": true,
               "isNullable": false,
@@ -210,7 +210,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "typeName": "NcString",
               "readOnly": false,
               "persistent": true,
-              "isNullable": false,
+              "isNullable": true,
               "isSequence": false,
               "constraints": null
             },
