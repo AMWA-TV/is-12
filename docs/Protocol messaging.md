@@ -43,7 +43,9 @@ Each message must have the following:
 
 Commands MUST be responded to by devices using the `CommandResponse` messageType and the matching `handle` for each message.
 
-`Note`: All command results inherit from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). This means all results MUST have a `status` property and MAY have an `errorMessage`.
+All command results inherit from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). This means all results MUST have a `status` property.
+
+When a method call encounters an error the return MUST be `NcMethodResultError` or a derived datatype.
 
 ## Notification message type
 
