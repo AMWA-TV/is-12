@@ -51,7 +51,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
               "id": [
                 1,
                 3,
-                3
+                2
               ],
               "version": "1.0.0"
             },
@@ -68,7 +68,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
               "id": [
                 1,
                 3,
-                5
+                4
               ],
               "version": "1.0.0"
             },

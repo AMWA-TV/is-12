@@ -1,10 +1,9 @@
 # Data type definition discovery
 
-The `NcClassManager` can also be used to discover data types using the `GetDataType` method.
+`NcClassManager` can also be used to get the descriptors of all data types used be the device by getting the value of property `datatypes (3p2)`. Alternatively the `GetDataType (3m2)` method can be used to return a single datatype descriptor. This requires the following arguments:
 
-The `GetDataType (3m2)` returns a single data type descriptor and requires the following arguments:
-
-* name - name of the data type
+* name - name of the data type of type `NcName`
+* includeInherited - of type `NcBoolean` (if set the descriptor would contain all inherited elements)
 
 Example for calling GetDataType (3m2) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid - 3) when wanting to retrieve the data type definition for `NcConnectionStatus`
 
@@ -21,7 +20,8 @@ Example for calling GetDataType (3m2) on the ClassManager (using the oid retriev
         "index": 2
       },
       "arguments": {
-        "name": "NcConnectionStatus"
+        "name": "NcConnectionStatus",
+        "includeInherited": false
       }
     }
   ]
@@ -44,26 +44,26 @@ Example response from calling GetDataType (3m2) on the ClassManager for data typ
           "name": "NcConnectionStatus",
           "type": 3,
           "constraints": null,
-          "content": [
+          "items": [
             {
               "description": "This is the value when there is no receiver",
               "name": "Undefined",
-              "index": 0
+              "value": 0
             },
             {
               "description": "Connected to a stream",
               "name": "Connected",
-              "index": 1
+              "value": 1
             },
             {
               "description": "Not connected to a stream",
               "name": "Disconnected",
-              "index": 2
+              "value": 2
             },
             {
               "description": "A connection error was encountered",
               "name": "ConnectionError",
-              "index": 3
+              "value": 3
             }
           ]
         }

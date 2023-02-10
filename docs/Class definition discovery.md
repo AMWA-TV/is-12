@@ -1,10 +1,9 @@
 # Class definition discovery
 
-[MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism which can be used for discovering details of class definitions. This is offered through a set of methods which exist in the `NcClassManager`. The `NcClassManager` can be found in the members of the root block as shown in the earlier examples.
-
-The `GetControlClass (3m1)` returns a single class descriptor (the descriptor includes all inherited properties and methods) and requires the following arguments:
+[MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism in `NcClassManager` which can be used for discovering details of class definitions. Descriptors of all the classes may be retrieved by getting the value of property `controlClasses (3p1)`. Alternatively the `GetControlClass (3m1)` method can be used to return a single class descriptor. This requires the following arguments:
 
 * identity - of type `NcClassIdentity`
+* includeInherited - of type `NcBoolean` (if set the descriptor would contain all inherited elements)
 
 Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,3)
 
@@ -25,7 +24,8 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
         "identity": {
           "id": [1, 2, 3],
           "version": "1.0.0"
-        }
+        },
+        "includeInherited": true
       }
     }
   ]
@@ -54,8 +54,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "enabled",
               "typeName": "NcBoolean",
-              "readOnly": false,
-              "persistent": true,
+              "isReadOnly": false,
+              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -68,8 +68,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "connectionStatus",
               "typeName": "NcConnectionStatus",
-              "readOnly": true,
-              "persistent": false,
+              "isReadOnly": true,
+              "isPersistent": false,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -82,8 +82,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "connectionStatusMessage",
               "typeName": "NcString",
-              "readOnly": true,
-              "persistent": false,
+              "isReadOnly": true,
+              "isPersistent": false,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -96,8 +96,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "payloadStatus",
               "typeName": "NcPayloadStatus",
-              "readOnly": true,
-              "persistent": false,
+              "isReadOnly": true,
+              "isPersistent": false,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -110,8 +110,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "payloadStatusMessage",
               "typeName": "NcString",
-              "readOnly": true,
-              "persistent": false,
+              "isReadOnly": true,
+              "isPersistent": false,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -124,8 +124,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "classId",
               "typeName": "NcClassId",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -138,8 +138,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "classVersion",
               "typeName": "NcVersionCode",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -152,8 +152,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "oid",
               "typeName": "NcOid",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -166,8 +166,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "constantOid",
               "typeName": "NcBoolean",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -180,8 +180,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "owner",
               "typeName": "NcOid",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -194,8 +194,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "role",
               "typeName": "NcString",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -208,8 +208,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "userLabel",
               "typeName": "NcString",
-              "readOnly": false,
-              "persistent": true,
+              "isReadOnly": false,
+              "isPersistent": true,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -222,8 +222,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "touchpoints",
               "typeName": "NcTouchpoint",
-              "readOnly": true,
-              "persistent": true,
+              "isReadOnly": true,
+              "isPersistent": true,
               "isNullable": true,
               "isSequence": true,
               "constraints": null
