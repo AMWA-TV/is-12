@@ -45,21 +45,17 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
         "status": 200,
         "value": {
           "description": "NcReceiverMonitor class descriptor",
+          "identity": {
+            "id": [
+              1,
+              2,
+              3
+            ],
+            "version": "1.0.0"
+          },
+          "name": "NcReceiverMonitor",
+          "fixedRole": null,
           "properties": [
-            {
-              "description": "TRUE iff worker is enabled",
-              "id": {
-                "level": 2,
-                "index": 1
-              },
-              "name": "enabled",
-              "typeName": "NcBoolean",
-              "isReadOnly": false,
-              "isPersistent": true,
-              "isNullable": false,
-              "isSequence": false,
-              "constraints": null
-            },
             {
               "description": "Connection status property",
               "id": {
@@ -113,6 +109,20 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "isReadOnly": true,
               "isPersistent": false,
               "isNullable": true,
+              "isSequence": false,
+              "constraints": null
+            },
+            {
+              "description": "TRUE iff worker is enabled",
+              "id": {
+                "level": 2,
+                "index": 1
+              },
+              "name": "enabled",
+              "typeName": "NcBoolean",
+              "isReadOnly": false,
+              "isPersistent": true,
+              "isNullable": false,
               "isSequence": false,
               "constraints": null
             },
@@ -283,7 +293,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "name": "value",
                   "typeName": null,
                   "isNullable": true,
-                  "isSequence": null,
+                  "isSequence": false,
                   "constraints": null
                 }
               ]
@@ -345,7 +355,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "name": "value",
                   "typeName": null,
                   "isNullable": true,
-                  "isSequence": null,
+                  "isSequence": false,
                   "constraints": null
                 }
               ]
@@ -372,7 +382,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "name": "value",
                   "typeName": null,
                   "isNullable": true,
-                  "isSequence": null,
+                  "isSequence": false,
                   "constraints": null
                 }
               ]
