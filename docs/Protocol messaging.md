@@ -56,4 +56,4 @@ Each message must have the following:
 * type - integer enum value for the `NcNotificationType` specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). The options are: `Event` which are regular event notifications or `SubscriptionEnd` which is signaled when a subscription ends for any reason.
 * oid - unique object id of the emitter
 * eventId - unique event Id specified as a level and index.
-* eventData - For notifications of type `Event` eventData is of type `NcPropertyChangedEventData` whereas for notifications of type `SubscriptionEnd` eventData is of type `NcSubscriptionEndEventData` (see [MS-05-02](https://specs.amwa.tv/ms-05-02) for type definitions).
+* eventData - eventData is of type `NcPropertyChangedEventData` (see [MS-05-02](https://specs.amwa.tv/ms-05-02) for type definitions).
