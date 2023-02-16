@@ -22,6 +22,9 @@ enum MessageType {
   Command = 0,
   CommandResponse = 1,
   Notification = 2,
+  Subscription = 3,
+  SubscriptionResponse = 4,
+  Error = 5
 }
 ```
 
@@ -51,9 +54,59 @@ When a method call encounters an error the return MUST be `NcMethodResultError` 
 
 Notifications are clearly distinguished using the `Notification` messageType and are always sent from the device to the controllers subscribed to a particular event.
 Multiple messages MAY be sent in a `Notification`.
-Each message must have the following:
+Each message MUST have the following:
 
-* type - integer enum value for the `NcNotificationType` specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). The options are: `Event` which are regular event notifications or `SubscriptionEnd` which is signaled when a subscription ends for any reason.
 * oid - unique object id of the emitter
 * eventId - unique event Id specified as a level and index.
-* eventData - eventData is of type `NcPropertyChangedEventData` (see [MS-05-02](https://specs.amwa.tv/ms-05-02) for type definitions).
+* eventData - eventData (`NcPropertyChangedEventData` for property changed events, see [MS-05-02](https://specs.amwa.tv/ms-05-02) for type definitions).
+
+## Subscription message type
+
+Subscription messages are clearly distinguished using the `Subscription` messageType.
+Each message MUST have the following:
+
+* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
+* messageType - describes the message type
+* subscriptions - Array of OIDs desired for subscription
+
+Subscription messages MUST be responded to by devices using the `SubscriptionResponse` messageType.
+
+## Subscription response message type
+
+Subscription response messages are clearly distinguished using the `SubscriptionResponse` messageType.
+Each message MUST have the following:
+
+* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
+* messageType - describes the message type
+* subscriptions - Array of OIDs which have successfully been added to the subscription list
+
+Devices MUST return a response where all the original OIDs requested for subscribing which are valid are in the subscriptions array. Devices are responsible for filtering out invalid OIDs which cannot be subscribed to.
+
+Here is one example.
+
+```json
+{
+  "protocolVersion": "1.0.0",
+  "messageType": 4,
+  "subscriptions": [
+    1,
+    100,
+    111,
+    10001
+  ]
+}
+```
+
+This allows controllers to know which items they have successfully subscribed to.
+
+## Error messages
+
+Error messages are clearly distinguished using the `Error` messageType.
+Each message MUST have the following:
+
+* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
+* messageType - describes the message type
+* status - status of the message response. Must include the numeric values for NcMethodStatus or other types which inherit from it.
+* errorMessage - error details associated with the failure
+
+Error messages MUST be used by devices to return general error messages when more specific responses cannot be returned using the `CommandResponse` message (for example when incoming messages do not have protocolVersion, messageType, handles or contain invalid JSON).
