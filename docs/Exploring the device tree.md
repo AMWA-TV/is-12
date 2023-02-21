@@ -61,23 +61,6 @@ Example response from calling the generic getter (1m1) on the root block to retr
             "constraints": null
           },
           {
-            "role": "SubscriptionManager",
-            "oid": 5,
-            "constantOid": true,
-            "identity": {
-              "id": [
-                1,
-                3,
-                4
-              ],
-              "version": "1.0.0"
-            },
-            "userLabel": "Subscription manager",
-            "owner": 1,
-            "description": "The subscription manager offers the ability to subscribe to events on particular objects and properties",
-            "constraints": null
-          },
-          {
             "role": "ReceiverMonitor_01",
             "oid": 11,
             "constantOid": true,

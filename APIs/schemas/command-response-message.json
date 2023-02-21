@@ -10,7 +10,8 @@
     {
       "type": "object",
       "required": [
-        "responses"
+        "responses",
+        "messageType"
       ],
       "properties": {
         "responses": {

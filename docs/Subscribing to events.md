@@ -1,47 +1,39 @@
 # Subscribing to events
 
-A controller can subscribe to all events of an emitter object by using the `SubscriptionManager` found in the root block.
+A controller can subscribe to all OIDs it is interested in receiving notifications from by using the `SubscriptionMessage`.
 
-Example for calling AddSubscription (3m1) on the SubscriptionManager (using the oid retrieved from the root block - e.g. SubscriptionManager oid = 5) for a particular emitter object.
-
-```json
-{
-  "protocolVersion": "1.0.0",
-  "messageType": 0,
-  "commands": [
-    {
-      "handle": 5,
-      "oid": 5,
-      "methodId": {
-        "level": 3,
-        "index": 1
-      },
-      "arguments": {
-        "oid": 98119
-      }
-    }
-  ]
-}
-```
-
-Example response from calling AddSubscription (3m1) on the SubscriptionManager (using the oid retrieved from the root block - SubscriptionManager oid = 5) for a particular emitter object.
+Example message for subscribing to multiple OIDs.
 
 ```json
 {
   "protocolVersion": "1.0.0",
-  "messageType": 1,
-  "responses": [
-    {
-      "handle": 5,
-      "result": {
-        "status": 200
-      }
-    }
+  "messageType": 3,
+  "subscriptions": [
+    1,
+    100,
+    111,
+    98119
   ]
 }
 ```
 
-Example notification for the PropertyChanged event (1e1) when the `userLabel` property (1p7) changes.
+Example `SubscriptionResponse` message received
+
+```json
+{
+  "protocolVersion": "1.0.0",
+  "messageType": 4,
+  "subscriptions": [
+    1,
+    100,
+    98119
+  ]
+}
+```
+
+`Note` in this example, 111 was removed from the response subscriptions array because it was not a valid OID for subscribing.
+
+Example notification for the PropertyChanged event (1e1) when the `userLabel` property (1p7) changes on object with OID 98119
 
 ```json
 {
@@ -50,6 +42,10 @@ Example notification for the PropertyChanged event (1e1) when the `userLabel` pr
   "notifications": [
     {
       "oid": 98119,
+      "eventId": {
+        "level": 1,
+        "index": 1
+      },
       "eventData": {
         "propertyId": {
           "level": 1,

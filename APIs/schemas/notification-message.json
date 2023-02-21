@@ -10,7 +10,8 @@
     {
       "type": "object",
       "required": [
-        "notifications"
+        "notifications",
+        "messageType"
       ],
       "properties": {
         "notifications": {
@@ -20,6 +21,7 @@
             "type": "object",
             "required": [
               "oid",
+              "eventId",
               "eventData"
             ],
             "properties": {
@@ -29,53 +31,30 @@
                 "minimum": 1,
                 "maximum": 65535
               },
-              "eventData": {
+              "eventId": {
                 "type": "object",
-                "description": "Notification event data",
+                "description": "Event ID structure",
                 "required": [
-                  "propertyId",
-                  "changeType",
-                  "value",
-                  "sequenceItemIndex"
+                  "level",
+                  "index"
                 ],
                 "properties": {
-                  "propertyId": {
-                    "type": "object",
-                    "description": "Property ID structure",
-                    "required": [
-                      "level",
-                      "index"
-                    ],
-                    "properties": {
-                      "level": {
-                        "type": "integer",
-                        "description": "Level component of the property ID",
-                        "minimum": 0,
-                        "maximum": 65535
-                      },
-                      "index": {
-                        "type": "integer",
-                        "description": "Index component of the property ID",
-                        "minimum": 1,
-                        "maximum": 65535
-                      }
-                    }
-                  },
-                  "changeType": {
+                  "level": {
                     "type": "integer",
-                    "description": "Event change type numeric value. Must include the numeric values for NcPropertyChangeType",
+                    "description": "Level component of the event ID",
                     "minimum": 0,
                     "maximum": 65535
                   },
-                  "value": {
-                    "type": ["string", "number", "object", "array", "boolean", "null" ],
-                    "description": "Property value as described in the MS-05-02 Class definition or in a private Class definition"
-                  },
-                  "sequenceItemIndex": {
-                    "type": ["number", "null" ],
-                    "description": "Index of sequence item if the property is a sequence"
+                  "index": {
+                    "type": "integer",
+                    "description": "Index component of the event ID",
+                    "minimum": 1,
+                    "maximum": 65535
                   }
                 }
+              },
+              "eventData": {
+                "$ref": "event-data.json"
               }
             }
           }
