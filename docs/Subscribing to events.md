@@ -33,7 +33,7 @@ Example `SubscriptionResponse` message received
 
 `Note` in this example, 111 was removed from the response subscriptions array because it was not a valid OID for subscribing.
 
-Example notification for the PropertyChanged event (1e1) when the `userLabel` property (1p7) changes on object with OID 98119
+Example notification for the PropertyChanged event (1e1) when the `userLabel` property (1p6) changes on object with OID 98119
 
 ```json
 {
@@ -49,7 +49,7 @@ Example notification for the PropertyChanged event (1e1) when the `userLabel` pr
       "eventData": {
         "propertyId": {
           "level": 1,
-          "index": 7
+          "index": 6
         },
         "changeType": 0,
         "value": "Input 1",
