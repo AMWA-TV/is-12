@@ -2,7 +2,7 @@
 
 [MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism in `NcClassManager` which can be used for discovering details of class definitions. Descriptors of all the classes may be retrieved by getting the value of property `controlClasses (3p1)`. Alternatively the `GetControlClass (3m1)` method can be used to return a single class descriptor. This requires the following arguments:
 
-* identity - of type `NcClassIdentity`
+* identity - of type `NcClassId`
 * includeInherited - of type `NcBoolean` (if set the descriptor would contain all inherited elements)
 
 Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,3)
@@ -21,10 +21,7 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
       },
       "arguments":
       {
-        "identity": {
-          "id": [1, 2, 3],
-          "version": "1.0.0"
-        },
+        "identity": [1, 2, 3],
         "includeInherited": true
       }
     }
@@ -45,14 +42,11 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
         "status": 200,
         "value": {
           "description": "NcReceiverMonitor class descriptor",
-          "identity": {
-            "id": [
+          "identity": [
               1,
               2,
               3
             ],
-            "version": "1.0.0"
-          },
           "name": "NcReceiverMonitor",
           "fixedRole": null,
           "properties": [
@@ -134,20 +128,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               },
               "name": "classId",
               "typeName": "NcClassId",
-              "isReadOnly": true,
-              "isPersistent": true,
-              "isNullable": false,
-              "isSequence": false,
-              "constraints": null
-            },
-            {
-              "description": "Class version",
-              "id": {
-                "level": 1,
-                "index": 2
-              },
-              "name": "classVersion",
-              "typeName": "NcVersionCode",
               "isReadOnly": true,
               "isPersistent": true,
               "isNullable": false,
