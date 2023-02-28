@@ -47,7 +47,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
             "role": "ClassManager",
             "oid": 3,
             "constantOid": true,
-            "identity": [
+            "classId": [
                 1,
                 3,
                 2
@@ -61,7 +61,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
             "role": "ReceiverMonitor_01",
             "oid": 11,
             "constantOid": true,
-            "identity": [
+            "classId": [
                 1,
                 2,
                 3
@@ -125,7 +125,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
             "role": "ReceiverMonitor_01",
             "oid": 11,
             "constantOid": true,
-            "identity": [
+            "classId": [
                 1,
                 2,
                 3
