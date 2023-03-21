@@ -79,9 +79,9 @@ Example response from calling the generic getter (1m1) on the root block to retr
 }
 ```
 
-`Note`: Members must never change their roles. Object ids might change during the operation of the device but roles must always remain static for the same member. The `constantOid` signals whether an object ID will be constant or not.
+`Note`: Members must never change their roles. Object ids might change during the operation of the device but roles must always remain fixed for the same member. The `constantOid` signals whether an object ID will be constant or not.
 
-Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block.
+Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block. The relative path to search for (should not include the role of the block targeted by oid)
 
 Example for calling FindMembersByPath (2m2) on the root block
 
@@ -97,11 +97,12 @@ Example for calling FindMembersByPath (2m2) on the root block
         "level": 2,
         "index": 2
       },
-      "arguments": 
+      "arguments":
       {
         "path": [
-          "root",
-          "ReceiverMonitor_01"
+          "stereo-gain",
+          "channel-gain",
+          "left-gain"
         ]
       }
     }
@@ -122,17 +123,19 @@ Example response from calling FindMembersByPath (2m2) on the root block
         "status": 200,
         "value": [
           {
-            "role": "ReceiverMonitor_01",
-            "oid": 11,
+            "role": "left-gain",
+            "oid": 22,
             "constantOid": true,
             "classId": [
-                1,
-                2,
-                3
-              ],
-            "userLabel": "Receiver monitor 01",
-            "owner": 1,
-            "description": "Receiver monitor worker",
+              1,
+              2,
+              1,
+              1,
+              1
+            ],
+            "userLabel": "Left gain",
+            "owner": 21,
+            "description": "Left channel gain",
             "constraints": null
           }
         ]
