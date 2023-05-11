@@ -38,7 +38,7 @@ Under normal operating circumstances devices MUST keep the WebSocket connection 
 
 Commands are clearly distinguished using the `Command` messageType.
 Multiple messages MAY be sent in a `Command`.
-Each message must have the following:
+Each message MUST have the following:
 
 * handle - numeric message identification used for pairing the response
 * oid - unique object id targeted by this message
