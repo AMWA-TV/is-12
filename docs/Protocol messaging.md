@@ -31,7 +31,8 @@ enum MessageType {
 ## Control session
 
 The control session context is delegated to the underlying WebSocket transport and its built in mechanisms for detecting communication failure.
-When a communication failure occurs, then both the controller and the device MUST dispose of the current WebSocket connection. Controllers can open a new WebSocket connection, but any previous control context is lost and must be recreated (e.g. subscriptions have to be reissued and initial states have to be reacquired).
+When a communication failure occurs, then both the controller and the device MUST dispose of the current WebSocket connection. Controllers can open a new WebSocket connection, but any previous control context is lost and must be recreated (e.g. subscriptions have to be reissued and initial states have to be reacquired).  
+Under normal operating circumstances devices MUST keep the WebSocket connection open until the controller closes the connection.
 
 ## Command message type
 
