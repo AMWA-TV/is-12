@@ -5,7 +5,7 @@ All protocol messages MUST have have the following 2 properties:
 * protocolVersion - describes the version of this protocol (e.g. 1.0.0)
 * messageType - describes the message type (e.g. Command)
 
-`Note`: When sending messages, each message must contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
+`Note`: When sending messages, each message MUST contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
 
 `Note`: All message results MUST return a response which inherits from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). This contains at the very least a status of type `NcMethodStatus`. If the method call encountered an error then the response result returned MUST inherit from `NcMethodResultError` and include an errorMessage of type `NcString`.
 
