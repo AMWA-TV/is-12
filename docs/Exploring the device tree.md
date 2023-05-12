@@ -2,7 +2,6 @@
 
 All blocks (NcBlock) contain a members property which holds descriptions of all members (workers, blocks, agents, managers etc.) contained.
 The members for any block can be obtained by invoking the generic Get method (1m1) for the property id (2p10).
-Requesting members for anything other than a block is not allowed and will return an error status code.
 
 The device `root block` MUST always have the static `oid` of `1`. No other object or member must use the `oid` of `1` besides the root block.
 
