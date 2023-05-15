@@ -1,9 +1,9 @@
 # Class definition discovery
 
-[MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism in `NcClassManager` which can be used for discovering details of class definitions. Descriptors of all the classes may be retrieved by getting the value of property `controlClasses (3p1)`. Alternatively the `GetControlClass (3m1)` method can be used to return a single class descriptor. This requires the following arguments:
+[MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism in [NcClassManager](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Managers.html#class-manager) which can be used for discovering details of class definitions. Descriptors of all the classes may be retrieved by getting the value of property `controlClasses (3p1)`. Alternatively the `GetControlClass (3m1)` method can be used to return a single class descriptor. This requires the following arguments:
 
-* identity - of type `NcClassId`
-* includeInherited - of type `NcBoolean` (if set the descriptor would contain all inherited elements)
+* identity - of type [NcClassId](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncclassid)
+* includeInherited - of type [NcBoolean](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives) (if set the descriptor would contain all inherited elements)
 
 Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,3)
 

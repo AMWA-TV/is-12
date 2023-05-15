@@ -1,6 +1,6 @@
 # Sending commands
 
-Example for setting the user label (1p6) on any NcObject using the generic set method (1m2) (requires arguments but does not return a value)
+Example for setting the user label (1p6) on any [NcObject](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/NcObject.html) using the generic set method (1m2) (requires arguments but does not return a value)
 
 ```json
 {
@@ -26,7 +26,7 @@ Example for setting the user label (1p6) on any NcObject using the generic set m
 }
 ```
 
-Example response for setting the user label (1p6) on any NcObject using the generic set method (1m2).
+Example response for setting the user label (1p6) on any [NcObject](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/NcObject.html) using the generic set method (1m2).
 
 ```json
 {
@@ -43,7 +43,7 @@ Example response for setting the user label (1p6) on any NcObject using the gene
 }
 ```
 
-Example command for retrieving the classId (1p1) on any NcObject using the generic get method (1m1) (has no arguments but has a return value of `NcMethodResultPropertyValue` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02))
+Example command for retrieving the classId (1p1) on any [NcObject](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/NcObject.html) using the generic get method (1m1) (has no arguments but has a return value of [NcMethodResultPropertyValue](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresultpropertyvalue)).
 
 ```json
 {
@@ -68,7 +68,7 @@ Example command for retrieving the classId (1p1) on any NcObject using the gener
 }
 ```
 
-Example response for retrieving the classId (1p1) on any NcObject using the generic get method (1m1).
+Example response for retrieving the classId (1p1) on any [NcObject](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/NcObject.html) using the generic get method (1m1).
 
 ```json
 {

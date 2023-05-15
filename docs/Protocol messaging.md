@@ -7,7 +7,7 @@ All protocol messages MUST have have the following 2 properties:
 
 `Note`: When sending messages, each message MUST contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
 
-`Note`: All message results MUST return a response which inherits from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). This contains at the very least a status of type `NcMethodStatus`. If the method call encountered an error then the response result returned MUST inherit from `NcMethodResultError` and include an errorMessage of type `NcString`.
+`Note`: All message results MUST return a response which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult). This contains at the very least a status of type [NcMethodStatus](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodstatus). If the method call encountered an error then the response result returned MUST inherit from [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) and include an errorMessage of type [NcString](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives).
 
 Data types:
 
@@ -47,9 +47,9 @@ Each message MUST have the following:
 
 Commands MUST be responded to by devices using the `CommandResponse` messageType and the matching `handle` for each message.
 
-All command results inherit from the base `NcMethodResult` as specified in [MS-05-02](https://specs.amwa.tv/ms-05-02). This means all results MUST have a `status` property.
+All command results inherit from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult). This means all results MUST have a `status` property.
 
-When a method call encounters an error the return MUST be `NcMethodResultError` or a derived datatype.
+When a method call encounters an error the return MUST be [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) or a derived datatype.
 
 ## Notification message type
 
@@ -59,7 +59,7 @@ Each message MUST have the following:
 
 * oid - unique object id of the emitter
 * eventId - unique event Id specified as a level and index.
-* eventData - eventData (`NcPropertyChangedEventData` for property changed events, see [MS-05-02](https://specs.amwa.tv/ms-05-02) for type definitions).
+* eventData - eventData ([NcPropertyChangedEventData](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncpropertychangedeventdata) for property changed events).
 
 ## Subscription message type
 
