@@ -34,6 +34,8 @@ The control session context is delegated to the underlying WebSocket transport a
 When a communication failure occurs, then both the controller and the device MUST dispose of the current WebSocket connection. Controllers can open a new WebSocket connection, but any previous control context is lost and has to be be recreated (e.g. subscriptions have to be reissued and initial states have to be reacquired).  
 Under normal operating circumstances devices MUST keep the WebSocket connection open until the controller closes the connection.
 
+Concurrency control is left to specific device implementations, however devices MUST always return relevant error messages and statuses when there are conflicts, errors or other noteworthy states (see [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) and [Error messages](#error-messages)).
+
 ## Command message type
 
 Commands are clearly distinguished using the `Command` messageType.
