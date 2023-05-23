@@ -17,4 +17,4 @@
 | sequences of primitive types | array of primitive types                 |
 | sequences of struct types    | array of objects                         |
 
-`Note`: [MS-05-02](https://specs.amwa.tv/ms-05-02) will also contain typedef definitions. These contain datatypes which forward to other defined datatypes.
+For specific datatype definitions consult the [NMOS Control Framework](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#datatypes).

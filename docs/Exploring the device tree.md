@@ -1,8 +1,7 @@
 # Exploring the device tree
 
-All blocks (NcBlock) contain a members property which holds descriptions of all members (workers, blocks, agents, managers etc.) contained.
+All blocks ([NcBlock](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Blocks.html)) contain a members property which holds descriptions of all members (workers, blocks, managers etc.) contained.
 The members for any block can be obtained by invoking the generic Get method (1m1) for the property id (2p10).
-Requesting members for anything other than a block is not allowed and will return an error status code.
 
 The device `root block` MUST always have the static `oid` of `1`. No other object or member must use the `oid` of `1` besides the root block.
 
@@ -81,7 +80,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
 
 `Note`: Members must never change their roles. Object ids might change during the operation of the device but roles must always remain fixed for the same member. The `constantOid` signals whether an object ID will be constant or not.
 
-Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block. The relative path to search for (should not include the role of the block targeted by oid)
+Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block. The relative path to search for (path does not include the role of the block targeted by oid)
 
 Example for calling FindMembersByPath (2m2) on the root block
 

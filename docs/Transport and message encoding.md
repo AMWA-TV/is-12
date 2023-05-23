@@ -1,5 +1,5 @@
 # Transport and message encoding
 
-The transport of choice is `WebSocket`.
+Implementations MUST use `WebSocket` as the communication transport.
 
-The message encoding is `JSON` as used by other NMOS specifications.
+Implementations MUST use `JSON` as the message encoding data format.
