@@ -43,14 +43,27 @@ Example response from calling the generic getter (1m1) on the root block to retr
         "status": 200,
         "value": [
           {
+            "role": "DeviceManager",
+            "oid": 2,
+            "constantOid": true,
+            "classId": [
+              1,
+              3,
+              1
+            ],
+            "userLabel": "Device manager",
+            "owner": 1,
+            "description": "The device manager offers information about the product this device is representing"
+          },
+          {
             "role": "ClassManager",
             "oid": 3,
             "constantOid": true,
             "classId": [
-                1,
-                3,
-                2
-              ],
+              1,
+              3,
+              2
+            ],
             "userLabel": "Class manager",
             "owner": 1,
             "description": "The class manager offers access to control class and data type descriptors"
@@ -60,14 +73,14 @@ Example response from calling the generic getter (1m1) on the root block to retr
             "oid": 11,
             "constantOid": true,
             "classId": [
-                1,
-                2,
-                3
-              ],
+              1,
+              2,
+              3
+            ],
             "userLabel": "Receiver monitor 01",
             "owner": 1,
             "description": "Receiver monitor worker"
-          }
+          },
           ...
         ]
       }
