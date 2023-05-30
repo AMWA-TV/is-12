@@ -5,7 +5,7 @@
 * name - name of the data type of type [NcName](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncname)
 * includeInherited - of type [NcBoolean](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives) (if set the descriptor would contain all inherited elements)
 
-Example for calling GetDataType (3m2) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid - 3) when wanting to retrieve the data type definition for `NcConnectionStatus`
+Example for calling GetDataType (3m2) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid - 3) when wanting to retrieve the data type definition for [NcConnectionStatus](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/monitoring/#ncconnectionstatus)
 
 ```json
 {
@@ -28,7 +28,7 @@ Example for calling GetDataType (3m2) on the ClassManager (using the oid retriev
 }
 ```
 
-Example response from calling GetDataType (3m2) on the ClassManager for data type `NcConnectionStatus`
+Example response from calling GetDataType (3m2) on the ClassManager for data type [NcConnectionStatus](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/monitoring/#ncconnectionstatus)
 
 ```json
 {

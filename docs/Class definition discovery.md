@@ -5,7 +5,7 @@
 * identity - of type [NcClassId](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncclassid)
 * includeInherited - of type [NcBoolean](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives) (if set the descriptor would contain all inherited elements)
 
-Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for NcReceiverMonitor (1,2,3)
+Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for [NcReceiverMonitor (1,2,3)](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/monitoring/#ncreceivermonitor)
 
 ```json
 {
@@ -29,7 +29,7 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
 }
 ```
 
-Example response from calling GetControlClass (3m1) on the ClassManager for class NcReceiverMonitor (1,2,3)
+Example response from calling GetControlClass (3m1) on the ClassManager for class [NcReceiverMonitor (1,2,3)](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/monitoring/#ncreceivermonitor)
 
 ```json
 {
