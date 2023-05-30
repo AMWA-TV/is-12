@@ -9,11 +9,11 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-Describes the specification for the NMOS Device Control protocol.
+Describes the specification for the NMOS Device Control & Monitoring Protocol.
 
 ### Why does it matter?
 
-Sets out the rules and requirements for implementing the NMOS Device Control protocol in devices and controllers.
+Sets out the rules and requirements for implementing the NMOS Device Control & Monitoring Protocol in devices and controllers.
 
 ### How does it work?
 
