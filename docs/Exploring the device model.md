@@ -105,10 +105,10 @@ Example for calling FindMembersByPath (2m2) on the root block
         "level": 2,
         "index": 2
       },
-      "arguments":
-      {
+      "arguments": {
         "path": [
-          "ReceiverMonitor_01"
+          "receivers",
+          "monitor-01"
         ]
       }
     }
@@ -129,7 +129,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
         "status": 200,
         "value": [
           {
-            "role": "ReceiverMonitor_01",
+            "role": "monitor-01",
             "oid": 11,
             "constantOid": true,
             "classId": [
@@ -138,7 +138,7 @@ Example response from calling FindMembersByPath (2m2) on the root block
               3
             ],
             "userLabel": "Receiver monitor 01",
-            "owner": 1,
+            "owner": 10,
             "description": "Receiver monitor worker"
           }
         ]
