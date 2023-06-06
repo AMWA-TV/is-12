@@ -13,7 +13,7 @@
 ### Examples
 
 - [Sending commands](Sending%20commands.md)
-- [Exploring the device tree](Exploring%20the%20device%20tree.md)
+- [Exploring the device model](Exploring%20the%20device%20model.md)
 - [Subscribing to events](Subscribing%20to%20events.md)
 - [Class definition discovery](Class%20definition%20discovery.md)
 - [Data type definition discovery](Data%20type%20definition%20discovery.md)

@@ -1,6 +1,6 @@
-# AMWA IS-12 NMOS Device Control Protocol \[Work In Progress\]
+# AMWA IS-12 NMOS Device Control & Monitoring Protocol \[Work In Progress\]
 
-This document aims to give a general description of the NMOS Device Control protocol. This protocol is compatible and adheres to the rules and requirements described in the NMOS Modeling architecture document and and is the way in which NMOS Control models (described in the NMOS Control Framework) can be exposed and consumed in a standardized way.
+This document aims to give a general description of the NMOS Device Control & Monitoring Protocol. This protocol is compatible and adheres to the rules and requirements described in the NMOS Modeling architecture document and and is the way in which NMOS Control models (described in the NMOS Control Framework) can be exposed and consumed in a standardized way.
 
 This document relies on previous familiarity with the following existing documents:
 

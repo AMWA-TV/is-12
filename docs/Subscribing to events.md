@@ -1,6 +1,6 @@
 # Subscribing to events
 
-A controller can subscribe to all OIDs it is interested in receiving notifications from by using the [SubscriptionMessage](https://specs.amwa.tv/is-12/branches/v1.0-dev/docs/Protocol_messaging.html#subscription-message-type).
+A controller can subscribe to all OIDs it is interested in receiving notifications from by using the [Subscription](https://specs.amwa.tv/is-12/branches/v1.0-dev/docs/Protocol_messaging.html#subscription-message-type) message.
 
 Example message for subscribing to multiple OIDs.
 
