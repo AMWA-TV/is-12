@@ -87,7 +87,7 @@ Example response from calling the generic getter (1m1) on the root block to retr
 }
 ```
 
-`Note`: Members never change their roles. Object ids can change during the operation of the device but roles remain fixed for the same member. The `constantOid` signals whether an object ID will be constant or not.
+`Note`: Members never change their roles. On reboot object ids can change but roles remain fixed for the same member. The `constantOid` signals whether an object ID will be constant or not.
 
 Controllers MAY persist the role paths of different block members and may need to inquire about the latest object ids in certain important lifecycle moments (e.g. device rebooting, firmware update finishing, new module installation etc.). A role path can be queried using the `FindMembersByPath` method defined in any block. The relative path to search for (path does not include the role of the block targeted by oid)
 
