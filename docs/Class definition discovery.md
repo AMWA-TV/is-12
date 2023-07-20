@@ -2,14 +2,13 @@
 
 [MS-05-02](https://specs.amwa.tv/ms-05-02) defines a class discovery mechanism in [NcClassManager](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Managers.html#class-manager) which can be used for discovering details of class definitions. Descriptors of all the classes can be retrieved by getting the value of property `controlClasses (3p1)`. Alternatively the `GetControlClass (3m1)` method can be used to return a single class descriptor. This requires the following arguments:
 
-* identity - of type [NcClassId](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncclassid)
+* classId - of type [NcClassId](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncclassid)
 * includeInherited - of type [NcBoolean](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives) (if set the descriptor would contain all inherited elements)
 
 Example for calling GetControlClass (3m1) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid = 3) when wanting to retrieve the class definition for [NcReceiverMonitor (1,2,3)](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/monitoring/#ncreceivermonitor)
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 0,
   "commands": [
     {
@@ -21,7 +20,7 @@ Example for calling GetControlClass (3m1) on the ClassManager (using the oid ret
       },
       "arguments":
       {
-        "identity": [1, 2, 3],
+        "classId": [1, 2, 3],
         "includeInherited": true
       }
     }
@@ -33,7 +32,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 1,
   "responses": [
     {
@@ -42,7 +40,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
         "status": 200,
         "value": {
           "description": "NcReceiverMonitor class descriptor",
-          "identity": [
+          "classId": [
               1,
               2,
               3
@@ -393,6 +391,26 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "constraints": null
                 }
               ]
+            },
+            {
+              "description": "Get sequence length",
+              "id": {
+                "level": 1,
+                "index": 7
+              },
+              "name": "GetSequenceLength",
+              "resultDatatype": "NcMethodResultLength",
+              "parameters": [
+                {
+                  "description": "Property id",
+                  "name": "id",
+                  "typeName": "NcPropertyId",
+                  "isNullable": false,
+                  "isSequence": false,
+                  "constraints": null
+                }
+              ],
+              "isDeprecated": false
             }
           ],
           "events": [

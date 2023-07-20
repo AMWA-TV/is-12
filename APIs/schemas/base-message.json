@@ -4,15 +4,9 @@
   "description": "Base protocol message structure",
   "title": "Base protocol message",
   "required": [
-    "protocolVersion",
     "messageType"
   ],
   "properties": {
-    "protocolVersion": {
-      "description": "Protocol version number",
-      "type": "string",
-      "pattern": "^(\\d+\\.)?(\\d+\\.)?(\\d+)$"
-    },
     "messageType": {
       "description": "Protocol message type",
       "type": "integer",

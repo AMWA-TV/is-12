@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "Error protocol message structure - used by devices to return general error messages for example when incoming messages do not have protocolVersion, messageType, handles or contain invalid JSON",
+  "description": "Error protocol message structure - used by devices to return general error messages for example when incoming messages do not have messageType, handles or contain invalid JSON",
   "title": "Error protocol message",
   "allOf": [
     {

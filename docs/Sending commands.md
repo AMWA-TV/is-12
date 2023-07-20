@@ -4,7 +4,6 @@ Example for setting the user label (1p6) on any [NcObject](https://specs.amwa.tv
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 0,
   "commands": [
     {
@@ -30,7 +29,6 @@ Example response for setting the user label (1p6) on any [NcObject](https://spec
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 1,
   "responses": [
     {
@@ -47,7 +45,6 @@ Example command for retrieving the classId (1p1) on any [NcObject](https://specs
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 0,
   "commands": [
     {
@@ -72,7 +69,6 @@ Example response for retrieving the classId (1p1) on any [NcObject](https://spec
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 1,
   "responses": [
     {
