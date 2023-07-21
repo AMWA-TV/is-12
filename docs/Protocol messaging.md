@@ -1,6 +1,6 @@
 # Protocol messaging
 
-All protocol messages MUST have have the following property:
+All protocol messages MUST have the messageType property to indicate the type of the message (e.g. Command).
 
 * messageType - describes the message type (e.g. Command)
 
