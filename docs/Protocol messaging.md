@@ -1,19 +1,15 @@
 # Protocol messaging
 
-All protocol messages MUST have have the following 2 properties:
+All protocol messages MUST have the `messageType` property to indicate the type of the message (e.g. Command).
 
-* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
-* messageType - describes the message type (e.g. Command)
+When sending messages, each message MUST contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
 
-`Note`: When sending messages, each message MUST contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
-
-`Note`: All message results MUST return a response which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult) that contains a status of type [NcMethodStatus](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodstatus). If the method call encountered an error then the response result returned MUST inherit from [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) and include an errorMessage of type [NcString](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives).
+All message results MUST return a response which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult) that contains a status of type [NcMethodStatus](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodstatus). If the method call encountered an error then the response result returned MUST inherit from [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) and include an errorMessage of type [NcString](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives).
 
 Data types:
 
 | Property                   | JSON representation                       |
 | -------------------------- | ----------------------------------------- |
-| protocolVersion            | String value of the protocol version      |
 | messageType                | Integer enum value as described below     |
 | handle                     | Integer value of the message handle       |
 
@@ -47,9 +43,16 @@ Each message MUST have the following:
 * methodId - unique method ID specified as the level and index of the method inside the class.
 * arguments - dictionary of arguments where the keys are the argument names and the values are their desired values (only needed if the method requires arguments)
 
-Commands MUST be responded to by devices using the `CommandResponse` messageType and the matching `handle` for each message.
+Commands MUST be responded to by devices using the [CommandResponse](#command-response-message-type) messageType and the matching `handle` for each message.
 
-All command results inherit from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult). This means all results MUST have a `status` property.
+## Command response message type
+
+Command responses are clearly distinguished using the `CommandResponse` messageType.
+Multiple messages MAY be sent in a `CommandResponse`.
+Each message MUST have the following:
+
+* handle - numeric message identification used for pairing the response with the associated command
+* result - result returned by the command which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult). This means all results MUST have a `status` property.
 
 When a method call encounters an error the return MUST be [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) or a derived datatype.
 
@@ -68,7 +71,6 @@ Each message MUST have the following:
 Subscription messages are clearly distinguished using the `Subscription` messageType.
 Each message MUST have the following:
 
-* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
 * messageType - describes the message type
 * subscriptions - Array of OIDs desired for subscription
 
@@ -79,7 +81,6 @@ Subscription messages MUST be responded to by devices using the `SubscriptionRes
 Subscription response messages are clearly distinguished using the `SubscriptionResponse` messageType.
 Each message MUST have the following:
 
-* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
 * messageType - describes the message type
 * subscriptions - Array of OIDs which have successfully been added to the subscription list
 
@@ -89,7 +90,6 @@ Here is one example.
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 4,
   "subscriptions": [
     1,
@@ -107,9 +107,8 @@ This allows controllers to know which items they have successfully subscribed to
 Error messages are clearly distinguished using the `Error` messageType.
 Each message MUST have the following:
 
-* protocolVersion - describes the version of this protocol (e.g. 1.0.0)
 * messageType - describes the message type
 * status - status of the message response. Must include the numeric values for NcMethodStatus or other types which inherit from it.
 * errorMessage - error details associated with the failure
 
-Error messages MUST be used by devices to return general error messages when more specific responses cannot be returned using the `CommandResponse` message (for example when incoming messages do not have protocolVersion, messageType, handles or contain invalid JSON).
+Error messages MUST be used by devices to return general error messages when more specific responses cannot be returned using the `CommandResponse` message (for example when incoming messages do not have messageType, handles or contain invalid JSON).

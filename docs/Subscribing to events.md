@@ -6,7 +6,6 @@ Example message for subscribing to multiple OIDs.
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 3,
   "subscriptions": [
     1,
@@ -21,7 +20,6 @@ Example [SubscriptionResponse](https://specs.amwa.tv/is-12/branches/v1.0-dev/doc
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 4,
   "subscriptions": [
     1,
@@ -37,7 +35,6 @@ Example notification for the PropertyChanged event (1e1) when the `userLabel` pr
 
 ```json
 {
-  "protocolVersion": "1.0.0",
   "messageType": 2,
   "notifications": [
     {
