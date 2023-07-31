@@ -57,7 +57,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "connectionStatus",
               "typeName": "NcConnectionStatus",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -71,7 +70,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "connectionStatusMessage",
               "typeName": "NcString",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -85,7 +83,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "payloadStatus",
               "typeName": "NcPayloadStatus",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -99,7 +96,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "payloadStatusMessage",
               "typeName": "NcString",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -113,7 +109,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "enabled",
               "typeName": "NcBoolean",
               "isReadOnly": false,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -127,7 +122,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "classId",
               "typeName": "NcClassId",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -141,7 +135,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "oid",
               "typeName": "NcOid",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -155,7 +148,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "constantOid",
               "typeName": "NcBoolean",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -169,7 +161,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "owner",
               "typeName": "NcOid",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -183,7 +174,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "role",
               "typeName": "NcString",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -197,7 +187,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "userLabel",
               "typeName": "NcString",
               "isReadOnly": false,
-              "isPersistent": true,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -211,7 +200,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "touchpoints",
               "typeName": "NcTouchpoint",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": true,
               "isSequence": true,
               "constraints": null
