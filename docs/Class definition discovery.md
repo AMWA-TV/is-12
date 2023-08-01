@@ -41,10 +41,10 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
         "value": {
           "description": "NcReceiverMonitor class descriptor",
           "classId": [
-              1,
-              2,
-              3
-            ],
+            1,
+            2,
+            3
+          ],
           "name": "NcReceiverMonitor",
           "fixedRole": null,
           "properties": [
@@ -57,7 +57,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "connectionStatus",
               "typeName": "NcConnectionStatus",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -71,7 +70,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "connectionStatusMessage",
               "typeName": "NcString",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -85,7 +83,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "payloadStatus",
               "typeName": "NcPayloadStatus",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
@@ -99,7 +96,6 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "payloadStatusMessage",
               "typeName": "NcString",
               "isReadOnly": true,
-              "isPersistent": false,
               "isNullable": true,
               "isSequence": false,
               "constraints": null
@@ -113,13 +109,12 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "enabled",
               "typeName": "NcBoolean",
               "isReadOnly": false,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
               "constraints": null
             },
             {
-              "description": "Class identity",
+              "description": "Static value. All instances of the same class will have the same identity value",
               "id": {
                 "level": 1,
                 "index": 1
@@ -127,109 +122,111 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
               "name": "classId",
               "typeName": "NcClassId",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
+              "isDeprecated": false,
               "constraints": null
             },
             {
               "description": "Object identifier",
               "id": {
                 "level": 1,
-                "index": 3
+                "index": 2
               },
               "name": "oid",
               "typeName": "NcOid",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
+              "isDeprecated": false,
               "constraints": null
             },
             {
               "description": "TRUE iff OID is hardwired into device",
               "id": {
                 "level": 1,
-                "index": 4
+                "index": 3
               },
               "name": "constantOid",
               "typeName": "NcBoolean",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
+              "isDeprecated": false,
               "constraints": null
             },
             {
               "description": "OID of containing block. Can only ever be null for the root block",
               "id": {
                 "level": 1,
-                "index": 5
+                "index": 4
               },
               "name": "owner",
               "typeName": "NcOid",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": true,
               "isSequence": false,
+              "isDeprecated": false,
               "constraints": null
             },
             {
-              "description": "role of obj in containing block",
+              "description": "Role of object in the containing block",
               "id": {
                 "level": 1,
-                "index": 6
+                "index": 5
               },
               "name": "role",
               "typeName": "NcString",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": false,
               "isSequence": false,
+              "isDeprecated": false,
               "constraints": null
             },
             {
               "description": "Scribble strip",
               "id": {
                 "level": 1,
-                "index": 7
+                "index": 6
               },
               "name": "userLabel",
               "typeName": "NcString",
               "isReadOnly": false,
-              "isPersistent": true,
               "isNullable": true,
               "isSequence": false,
+              "isDeprecated": false,
               "constraints": null
             },
             {
               "description": "Touchpoints to other contexts",
               "id": {
                 "level": 1,
-                "index": 8
+                "index": 7
               },
               "name": "touchpoints",
               "typeName": "NcTouchpoint",
               "isReadOnly": true,
-              "isPersistent": true,
               "isNullable": true,
               "isSequence": true,
+              "isDeprecated": false,
+              "constraints": null
+            },
+            {
+              "description": "Runtime property constraints",
+              "id": {
+                "level": 1,
+                "index": 8
+              },
+              "name": "runtimePropertyConstraints",
+              "typeName": "NcPropertyConstraints",
+              "isReadOnly": true,
+              "isNullable": true,
+              "isSequence": true,
+              "isDeprecated": false,
               "constraints": null
             }
           ],
           "methods": [
-            {
-              "description": "Method to retrieve both connection status and payload status in one call",
-              "id": {
-                "level": 3,
-                "index": 1
-              },
-              "name": "GetStatus",
-              "resultDatatype": "NcMethodResultReceiverStatus",
-              "parameters": [
-
-              ]
-            },
             {
               "description": "Get property value",
               "id": {
@@ -247,7 +244,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "isSequence": false,
                   "constraints": null
                 }
-              ]
+              ],
+              "isDeprecated": false
             },
             {
               "description": "Set property value",
@@ -274,7 +272,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "isSequence": false,
                   "constraints": null
                 }
-              ]
+              ],
+              "isDeprecated": false
             },
             {
               "description": "Get sequence item",
@@ -296,12 +295,13 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 {
                   "description": "Index of item in the sequence",
                   "name": "index",
-                  "typeName": "NcId32",
+                  "typeName": "NcId",
                   "isNullable": false,
                   "isSequence": false,
                   "constraints": null
                 }
-              ]
+              ],
+              "isDeprecated": false
             },
             {
               "description": "Set sequence item value",
@@ -323,7 +323,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 {
                   "description": "Index of item in the sequence",
                   "name": "index",
-                  "typeName": "NcId32",
+                  "typeName": "NcId",
                   "isNullable": false,
                   "isSequence": false,
                   "constraints": null
@@ -336,7 +336,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "isSequence": false,
                   "constraints": null
                 }
-              ]
+              ],
+              "isDeprecated": false
             },
             {
               "description": "Add item to sequence",
@@ -345,7 +346,7 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "index": 5
               },
               "name": "AddSequenceItem",
-              "resultDatatype": "NcMethodResultId32",
+              "resultDatatype": "NcMethodResultId",
               "parameters": [
                 {
                   "description": "Property id",
@@ -363,7 +364,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                   "isSequence": false,
                   "constraints": null
                 }
-              ]
+              ],
+              "isDeprecated": false
             },
             {
               "description": "Delete sequence item",
@@ -385,12 +387,13 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 {
                   "description": "Index of item in the sequence",
                   "name": "index",
-                  "typeName": "NcId32",
+                  "typeName": "NcId",
                   "isNullable": false,
                   "isSequence": false,
                   "constraints": null
                 }
-              ]
+              ],
+              "isDeprecated": false
             },
             {
               "description": "Get sequence length",
@@ -421,7 +424,8 @@ Example response from calling GetControlClass (3m1) on the ClassManager for clas
                 "index": 1
               },
               "name": "PropertyChanged",
-              "eventDatatype": "NcPropertyChangedEventData"
+              "eventDatatype": "NcPropertyChangedEventData",
+              "isDeprecated": false
             }
           ]
         }
