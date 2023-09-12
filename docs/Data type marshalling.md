@@ -17,4 +17,4 @@
 | sequences of primitive types | array of primitive types                 |
 | sequences of struct types    | array of objects                         |
 
-For specific datatype definitions consult the [NMOS Control Framework](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#datatypes).
+For specific datatype definitions consult the [NMOS Control Framework](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#datatypes).

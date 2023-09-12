@@ -4,7 +4,7 @@ All protocol messages MUST have the `messageType` property to indicate the type 
 
 When sending messages, each message MUST contain a `handle` numeric identifier. This is then used when responses are received from the device for matching the responses to the messages sent by the controller. The `handle` has no programmatic significance for the device.
 
-All message results MUST return a response which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult) that contains a status of type [NcMethodStatus](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodstatus). If the method call encountered an error then the response result returned MUST inherit from [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) and include an errorMessage of type [NcString](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives).
+All message results MUST return a response which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncmethodresult) that contains a status of type [NcMethodStatus](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncmethodstatus). If the method call encountered an error then the response result returned MUST inherit from [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncmethodresulterror) and include an errorMessage of type [NcString](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#primitives).
 
 Data types:
 
@@ -30,7 +30,7 @@ The control session context is delegated to the underlying WebSocket transport a
 When a communication failure occurs, then both the controller and the device MUST dispose of the current WebSocket connection. Controllers can open a new WebSocket connection, but any previous control context is lost and has to be be recreated (e.g. subscriptions have to be reissued and initial states have to be reacquired).  
 Under normal operating circumstances devices MUST keep the WebSocket connection open until the controller closes the connection.
 
-Concurrency control is left to specific device implementations, however devices MUST always return relevant error messages and statuses when there are conflicts, errors or other noteworthy states (see [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) and [Error messages](#error-messages)).
+Concurrency control is left to specific device implementations, however devices MUST always return relevant error messages and statuses when there are conflicts, errors or other noteworthy states (see [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncmethodresulterror) and [Error messages](#error-messages)).
 
 ## Command message type
 
@@ -52,9 +52,9 @@ Multiple messages MAY be sent in a `CommandResponse`.
 Each message MUST have the following:
 
 * handle - numeric message identification used for pairing the response with the associated command
-* result - result returned by the command which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresult). This means all results MUST have a `status` property.
+* result - result returned by the command which inherits from the base [NcMethodResult](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncmethodresult). This means all results MUST have a `status` property.
 
-When a method call encounters an error the return MUST be [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncmethodresulterror) or a derived datatype.
+When a method call encounters an error the return MUST be [NcMethodResultError](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncmethodresulterror) or a derived datatype.
 
 ## Notification message type
 
@@ -64,7 +64,7 @@ Each message MUST have the following:
 
 * oid - unique object id of the emitter
 * eventId - unique event Id specified as a level and index.
-* eventData - eventData ([NcPropertyChangedEventData](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncpropertychangedeventdata) for property changed events).
+* eventData - eventData ([NcPropertyChangedEventData](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncpropertychangedeventdata) for property changed events).
 
 ## Subscription message type
 

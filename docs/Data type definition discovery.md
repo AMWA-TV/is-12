@@ -1,9 +1,9 @@
 # Data type definition discovery
 
-[NcClassManager](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Managers.html#class-manager) can also be used to get the descriptors of all data types used be the device by getting the value of property `datatypes (3p2)`. Alternatively the `GetDataType (3m2)` method can be used to return a single datatype descriptor. This requires the following arguments:
+[NcClassManager](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Managers.html#class-manager) can also be used to get the descriptors of all data types used be the device by getting the value of property `datatypes (3p2)`. Alternatively the `GetDataType (3m2)` method can be used to return a single datatype descriptor. This requires the following arguments:
 
-* name - name of the data type of type [NcName](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#ncname)
-* includeInherited - of type [NcBoolean](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Framework.html#primitives) (if set the descriptor would contain all inherited elements)
+* name - name of the data type of type [NcName](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#ncname)
+* includeInherited - of type [NcBoolean](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Framework.html#primitives) (if set the descriptor would contain all inherited elements)
 
 Example for calling GetDataType (3m2) on the ClassManager (using the oid retrieved from the root block - e.g. ClassManager oid - 3) when wanting to retrieve the data type definition for [NcConnectionStatus](https://specs.amwa.tv/nmos-control-feature-sets/branches/main/monitoring/#ncconnectionstatus)
 

@@ -1,6 +1,6 @@
 # Exploring the device model
 
-All blocks ([NcBlock](https://specs.amwa.tv/ms-05-02/branches/v1.0-dev/docs/Blocks.html)) contain a members property which holds descriptions of all members (workers, blocks, managers etc.) contained.
+All blocks ([NcBlock](https://specs.amwa.tv/ms-05-02/branches/v1.0.x/docs/Blocks.html)) contain a members property which holds descriptions of all members (workers, blocks, managers etc.) contained.
 The members for any block can be obtained by invoking the generic Get method (1m1) for the property id (2p2).
 
 Example for calling the generic getter (1m1) on the root block to retrieve the members property (2p2)

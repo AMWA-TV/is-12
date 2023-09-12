@@ -1,10 +1,10 @@
 amwa_id: IS-12
 url: https://specs.amwa.tv/is-12
 name: Control Protocol
-status: Work In Progress
+status: AMWA Specification
 repo_name: is-12
 alt_repo_name: nmos-control-protocol
 repo_url: https://github.com/AMWA-TV/is-12
 releases:
-default_branch: v1.0-dev
+default_branch: v1.0.x
 show_in_index: true

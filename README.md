@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA NMOS Control & Monitoring Protocol
+# AMWA NMOS Control & Monitoring Protocol
 
 [![Lint Status](https://github.com/AMWA-TV/is-12/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/is-12/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/is-12/workflows/Render/badge.svg)](https://github.com/AMWA-TV/is-12/actions?query=workflow%3ARender)
