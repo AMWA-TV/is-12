@@ -11,4 +11,4 @@ The relevant documents can be found here:
 
 More specifically [BCP-003-02](https://specs.amwa.tv/bcp-003-02/branches/publish-is-12/docs/Authorization_Practice.html#is-12---control-protocol) has a dedicated section for how JSON Web Tokens can be created for IS-12.
 
-Please note, the `.` character is specifically used as a delimiter in role paths included in the read/write claims, so it cannot be used inside object roles.
+Note that the `.` character is specifically used as a delimiter in role paths included in the read/write claims, so it cannot be used inside object roles.
