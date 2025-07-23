@@ -1,6 +1,6 @@
 # IS-04 interactions
 
-The protocol availability MUST be advertised through existing IS-04 practices inside the controls array of an NMOS Device. Devices MUST include the `urn:x-nmos:control:ncp` control type.
+The protocol availability MUST be advertised through existing IS-04 practices inside the controls array of an NMOS Device (controls have been offered for device resources since IS-04 v1.1). Devices MUST include the `urn:x-nmos:control:ncp` control type.
 
 ```json
 { 
