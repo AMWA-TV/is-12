@@ -1,7 +1,7 @@
 # Subscribing to events
 
 A controller can subscribe to all OIDs it is interested in receiving notifications from by using the [Subscription](https://specs.amwa.tv/is-12/branches/v1.0.x/docs/Protocol_messaging.html#subscription-message-type) message.
-The controller must always send the complete list of OIDs it wants to hold active subscriptions for. Omitting a previously subscribed OID from the request's `subscriptions` array signals that the controller wishes to unsubscribe from it.
+Controllers always send the complete list of OIDs they want to hold active subscriptions for. Omitting a previously subscribed OID from the message's `subscriptions` array signals that the controller wishes to unsubscribe from it.
 
 Example message for subscribing to multiple OIDs.
 
