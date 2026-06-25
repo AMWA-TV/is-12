@@ -1,6 +1,7 @@
 # Subscribing to events
 
 A controller can subscribe to all OIDs it is interested in receiving notifications from by using the [Subscription](https://specs.amwa.tv/is-12/branches/v1.0.x/docs/Protocol_messaging.html#subscription-message-type) message.
+The controller must always send the complete list of OIDs it wants to hold active subscriptions for. Omitting a previously subscribed OID from the request's `subscriptions` array signals that the controller wishes to unsubscribe from it.
 
 Example message for subscribing to multiple OIDs.
 
@@ -30,6 +31,33 @@ Example [SubscriptionResponse](https://specs.amwa.tv/is-12/branches/v1.0.x/docs/
 ```
 
 `Note` in this example, 111 was removed from the response subscriptions array because it was not a valid OID for subscribing.
+
+
+
+Example message to unsubscribe all OIDs.
+
+```json
+{
+  "messageType": 3,
+  "subscriptions": []
+}
+```
+
+Example message to unsubscribe a single previously subscribed OID.
+
+```json
+{
+  "messageType": 3,
+  "subscriptions": [
+    100,
+    111,
+    98119
+  ]
+}
+```
+
+`Note` in this example, 1 was removed from the requests subscriptions array because the controller no longer wanted to subscribe to it.
+
 
 Example notification for the PropertyChanged event (1e1) when the `userLabel` property (1p6) changes on object with OID 98119
 
