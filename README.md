@@ -1,7 +1,8 @@
 # AMWA IS-12 NMOS Device Control & Monitoring Protocol Specification
 
 [![Lint Status](https://github.com/AMWA-TV/is-12/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/is-12/actions?query=workflow%3ALint)
-[![Render Status](https://github.com/AMWA-TV/is-12/workflows/Render/badge.svg)](https://github.com/AMWA-TV/is-12/actions?query=workflow%3ARender)
+[![Zensical Render Status](https://github.com/AMWA-TV/is-12/actions/workflows/docs.yml/badge.svg)](https://github.com/AMWA-TV/is-12/actions/workflows/docs.yml)
+[![Legacy Render Status](https://github.com/AMWA-TV/is-12/workflows/Render/badge.svg)](https://github.com/AMWA-TV/is-12/actions?query=workflow%3ARender)
 
 This repository holds the source for this Specification, part of the family of [Networked Media Open Specifications](https://specs.amwa.tv/nmos) from the [Advanced Media Workflow Association](https://amwa.tv)
 
@@ -9,15 +10,15 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-Describes the specification for the NMOS Device Control & Monitoring Protocol.
+- Describes the specification for the NMOS Device Control & Monitoring Protocol.
 
 ### Why does it matter?
 
-Sets out the rules and requirements for implementing the NMOS Device Control & Monitoring Protocol in devices and controllers.
+- Sets out the rules and requirements for implementing the NMOS Device Control & Monitoring Protocol in devices and controllers.
 
 ### How does it work?
 
-Describes a standard way of exposing NMOS Control models which can be consumed and interacted with.
+- Describes a standard way of exposing NMOS Control models which can be consumed and interacted with.
 
 ### Other specifications in the suite
 
