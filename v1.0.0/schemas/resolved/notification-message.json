@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "Notification protocol message structure",
+  "title": "Notification protocol message",
+  "allOf": [
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "description": "Base protocol message structure",
+      "title": "Base protocol message",
+      "required": [
+        "messageType"
+      ],
+      "properties": {
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "notifications",
+        "messageType"
+      ],
+      "properties": {
+        "notifications": {
+          "description": "Notifications being transmited in this transaction",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "oid",
+              "eventId",
+              "eventData"
+            ],
+            "properties": {
+              "oid": {
+                "type": "integer",
+                "description": "Emitter object id",
+                "minimum": 1
+              },
+              "eventId": {
+                "type": "object",
+                "description": "Event ID structure",
+                "required": [
+                  "level",
+                  "index"
+                ],
+                "properties": {
+                  "level": {
+                    "type": "integer",
+                    "description": "Level component of the event ID",
+                    "minimum": 1
+                  },
+                  "index": {
+                    "type": "integer",
+                    "description": "Index component of the event ID",
+                    "minimum": 1
+                  }
+                }
+              },
+              "eventData": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "description": "Event data structure",
+                "title": "Event data",
+                "oneOf": [
+                  {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "type": "object",
+                    "description": "Property changed event data structure",
+                    "title": "Property changed event data",
+                    "properties": {
+                      "propertyId": {
+                        "type": "object",
+                        "description": "Property ID structure",
+                        "required": [
+                          "level",
+                          "index"
+                        ],
+                        "properties": {
+                          "level": {
+                            "type": "integer",
+                            "description": "Level component of the property ID",
+                            "minimum": 1
+                          },
+                          "index": {
+                            "type": "integer",
+                            "description": "Index component of the property ID",
+                            "minimum": 1
+                          }
+                        }
+                      },
+                      "changeType": {
+                        "type": "integer",
+                        "description": "Event change type numeric value. Must include the numeric values for NcPropertyChangeType",
+                        "minimum": 0,
+                        "maximum": 65535
+                      },
+                      "value": {
+                        "type": [
+                          "string",
+                          "number",
+                          "object",
+                          "array",
+                          "boolean",
+                          "null"
+                        ],
+                        "description": "Property value as described in the MS-05-02 Class definition or in a private Class definition"
+                      },
+                      "sequenceItemIndex": {
+                        "type": [
+                          "number",
+                          "null"
+                        ],
+                        "description": "Index of sequence item if the property is a sequence"
+                      }
+                    },
+                    "required": [
+                      "propertyId",
+                      "changeType",
+                      "value",
+                      "sequenceItemIndex"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "messageType": {
+          "description": "Protocol message type",
+          "type": "integer",
+          "enum": [
+            2
+          ]
+        }
+      }
+    }
+  ]
+}
